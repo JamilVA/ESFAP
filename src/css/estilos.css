@@ -1,0 +1,36 @@
+:root {
+    --amarillo: #f4a227ff;
+    --azul: #002479;
+    --blanco: #f7fff7ff;
+    --grisclaro: #7698b3ff;
+    --grisoscuro: #738290ff;
+
+}
+
+.contenedor{
+    width: 750px;
+
+    margin: 0px auto;
+}
+
+.navegacion{
+    display: block;
+    
+
+}
+
+.nav-bg{
+    background-color: var(--azul);
+
+}
+
+.titulo {
+    font-family: 'Arizonia', cursive;
+    text-align: center;
+    font-size: 3.8rem;
+    color: var(--azul);
+}
+
+.titulo span {
+    color: var(--amarillo);
+}

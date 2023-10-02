@@ -7,22 +7,117 @@
 
 }
 
-.contenedor{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    background: url(../img/1.jfif) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 10%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100%;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.header::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(90deg,transparent,rgba(255, 255, 255,.4),transparent);
+    transition: .5s;
+}
+
+.header:hover::after{
+    left: 100%;
+}
+
+.logo {}
+
+.nav-brand {
+    max-height: 3.5rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2.5rem;
+}
+
+.nav-item a {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+#check-menu {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: var(--blanco);
+    cursor: pointer;
+    display: none;
+}
+
+
+.contenedor {
     width: 750px;
 
     margin: 0px auto;
 }
 
-.navegacion{
-    display: block;
-    
-
+.main{
+    position: absolute;
+    top: 10%;
 }
 
-.nav-bg{
-    background-color: var(--azul);
 
-}
+
 
 .titulo {
     font-family: 'Arizonia', cursive;
@@ -33,4 +128,61 @@
 
 .titulo span {
     color: var(--amarillo);
+}
+
+
+
+/* BREAKPOINTS */
+@media(max-width: 992px) {
+    .header {
+        padding: 1.2rem 5%;
+    }
+
+}
+
+@media(max-width: 768px) {
+
+    .icons {
+        display: inline-flex;
+    }
+
+    #check-menu:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check-menu:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 17.7rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(50px);
+
+        display: block;
+        text-align: center;
+
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+
+    }
+
+
+
+    #check-menu:checked~.navbar {
+        
+    }
+
+    .nav-item {
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+    }
+
 }

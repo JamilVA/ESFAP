@@ -4,256 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESFAP MUA</title>
+    <title>Document</title>
+
     <link rel="stylesheet" href="src/css/style.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
 
-    <!-- <header class="header inicio">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="/">
-                    <img src="src/img/Logo ESFAP.png" alt="Logotipo de ESFAP MUA">
-                </a>
+    <header>
+        <a href="inicio.html" class="brand"><img class="img-brand" src="src/img/LOGO ESFA OK.png" alt=""></a>
 
-                <div class="mobile-menu">
-                    <img src="" alt="icono menu responsive">
-                </div>
+        <div class="menu-btn"><i class='bx bx-menu' id="menu-icon"></i></div>
 
-                <div class="derecha">
-                    <nav class="navegacion">
-                        <a href="nosotros.html">Nosotros</a>
-                        <a href="anuncios.html">Carreras Profesionales</a>
-                        <a href="blog.html">Noticias</a>
-                        <a href="contacto.html">Contacto</a>
-                    </nav>
-                </div>
-   
-                
-            </div> 
-
-            <h1>Escuela Superior de Formación Artísica Pública</h1>
-        </div>
-    </header> -->
-
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-info">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">ESFAP MUA</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Conócenos
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                  <li><a class="dropdown-item" href="#">Sobre Nosotros</a></li>
-                  <li><a class="dropdown-item" href="#">Personal Docente</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Bienvenida del Director</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Link
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </nav> -->
-
-    <nav class="navbar navbar-expand-lg">
-        <div class="container"> <a class="navbar-brand navbar-logo" href="#"> <img src="src/img/logo.png" alt="logo"
-                    class="logo-1"> </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
-                    class="fas fa-bars"></span> </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link" href="" data-scroll-nav="0">Home</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="1">About</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="2">Features</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="3">Team</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="4">Testimonials</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="5">Faq</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="6">Contact</a> </li>
-                </ul>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Inicio</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Carreras Profesionales</a>
+                <a href="#">Programas</a>
+                <a href="#">Noticias</a>
             </div>
         </div>
-        
-    </nav>
+    </header>
 
-    <!-------Banner Start------->
-    <section class="banner" data-scroll-index='0'>
-        <div class="banner-overlay">
-            <div class="container">
-                 <div class="row">
-                    <div class="col-md-8 col-sm-12">
-                        <div class="banner-text">
-                            <h2 class="white">Mario Urteaga Alvarado</h2>
-                            <h6 class="white">This awesome template designed by <a href="http://w3Template.com"
-                                    target="_blank" rel="dofollow" class="weblink">W3 Template</a>.</h6>
-                            <p class="banner-text white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Curabitur hendrerit neque massa, sit amet tristique ante porta ut. In sodales et justo
-                                vel vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                fames ac turpis egestas.</p>
-                            <ul>
-                                <li><a href="#"><img src="src/img/appstore.png" class="wow fadeInUp"
-                                            data-wow-delay="0.4s" /></a></li>
-                                <li><a href="#"><img src="src/img/playstore.png" class="wow fadeInUp"
-                                            data-wow-delay="0.7s" /></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12"> <img src="src/img/iphone-screen.png"
-                            class="img-fluid wow fadeInUp" /> </div>
-                </div> 
-            </div>
+    <section class="home">
+
+        <video class="video-slider" src="src/img/video4.mp4" autoplay muted loop></video>
+
+        <div class="content">
+            <h2>El arte <br> <span>es la línea que une tus pensamientos</span> </h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptas tenetur perspiciatis
+                exercitationem deleniti reprehenderit corporis quidem magnam optio harum nisi voluptatem facere,
+                deserunt voluptates libero magni commodi, error quibusdam.</p>
+            <button href="#" class="button">Ver más</button>
         </div>
-        <span class="svg-wave"> <img class="svg-hero" src="src/img/applight-wave.svg"> </span>
+        <div class="slider-nav">
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+
+        </div>
     </section>
 
-    <!-------Banner End------->
-    <main class="contenedor seccion">
-        <h1>Mario Urteaga Alvarado</h1>
-
-        <div>
 
 
-
-        </div>
-    </main>
-
-    <section class="seccion contenedor">
-        <h2>Carreras Profesionales</h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="content">
-                            <p class="heading">Card Hover Effect
-                            </p>
-                            <p class="para">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
-                                laboriosam at voluptas minus culpa deserunt delectus sapiente
-                                inventore pariatur
-                            </p>
-                            <button class="btn">Read more</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="content">
-                            <p class="heading">Card Hover Effect
-                            </p>
-                            <p class="para">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
-                                laboriosam at voluptas minus culpa deserunt delectus sapiente
-                                inventore pariatur
-                            </p>
-                            <button class="btn">Read more</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="content">
-                            <p class="heading">Card Hover Effect
-                            </p>
-                            <p class="para">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
-                                laboriosam at voluptas minus culpa deserunt delectus sapiente
-                                inventore pariatur
-                            </p>
-                            <button class="btn">Read more</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="content">
-                            <p class="heading">Card Hover Effect
-                            </p>
-                            <p class="para">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
-                                laboriosam at voluptas minus culpa deserunt delectus sapiente
-                                inventore pariatur
-                            </p>
-                            <button class="btn">Read more</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-    </section>
-
-    <section class="imagen-contacto">
-
-    </section>
-
-    <div class="contenedor seccion seccion-inferior">
-        <section class="blog">
-            <h3>Noticias</h3>
-
-            <article class="entrada-blog">
-
-            </article>
-
-            <article class="entrada-blog">
-
-            </article>
-        </section>
-
-        <section class="testimoniales">
-            <h3>Testimoniales</h3>
-
-            <div class="testimonial">
-                <blockquote>
-                    Calidad de personal docente de primer nivel.
-                </blockquote>
-                <p>- Jamil Vasquez</p>
-            </div>
-        </section>
-    </div>
-
-    <footer class="footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
-
-        <p class="copyright">Todos los derechos Reservados 2023 &copy;</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
+    <script src="src/js/scripts.js"></script>
 </body>
 
 </html>

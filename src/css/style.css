@@ -4,7 +4,7 @@
 	--blanco: #f7fff7ff;
 	--grisclaro: #7698b3ff;
 	--grisoscuro: #738290ff;
-
+	--celeste: #2696E9
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
@@ -274,7 +274,84 @@ main {
 	border-radius: 12px;
 }
 
-.card-content {}
+/* S FOOTER */
+.footer{
+	background: var(--celeste);
+	padding: 1rem 2rem;
+	display: flex;
+	flex-direction: column;
+	color: var(--blanco);
+}
+.footer .footer-nav{
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+}
+
+.footer .footer-nav .footer-list{
+	list-style: none;
+}
+
+.footer .footer-nav .footer-list .footer-title{
+	position: relative;
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+	color: #202020;
+	text-transform: uppercase;
+}
+
+.footer .footer-nav .footer-list .footer-title::before{
+	content: '';
+	position: absolute;
+	background: var(--azul);
+	width: 0;
+	height: 3px;
+	bottom: -5px;
+	left: 0;
+	transition: 0.3s ease;
+}
+
+.footer .footer-nav .footer-list .footer-title:hover::before{
+	width: 50%;
+}
+
+.footer .footer-nav .footer-list .footer-link{
+	margin-top: 10px;
+}
+
+.footer .footer-nav .footer-list .footer-link a{
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+.footer .footer-nav .footer-list .footer-link i{
+	font-size: 1rem;
+	font-weight: 500;
+	transition: 0.3s ease;
+}
+
+.footer .footer-nav .footer-list .footer-link:hover a{
+	transform: scale(2);
+}
+
+.footer .footer-nav .footer-list .footer-link:hover i{
+	transform: scale(2);
+}
+
+.footer .footer-brand{
+	margin-top: 2rem;
+	text-align: center;
+}
+
+.footer .footer-copy{
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.footer .footer-brand .footer-img{
+	max-height: 200px;
+}
 
 /* WAVES */
 .wave-top {

@@ -368,6 +368,19 @@ main {
 }
 
 
+.title2{
+	margin-bottom: 10px;
+	font-size: 50px;
+	font-weight: 900;
+	color: var(--azul);
+}
+
+.text{
+	font-size: 15px;
+	line-height: 2;
+	text-align: justify;
+}
+
 /* MAIN CARRERAS */
 .carreras {
 	padding-top: 3rem;
@@ -470,6 +483,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	color: var(--blanco);
+	margin-top: 120px;
 }
 
 .footer .footer-nav {
@@ -569,6 +583,7 @@ main {
 	height: 100px;
 	background: url(../img/wave.png);
 	background-size: 1000px 100px;
+	
 }
 
 .footer .wave#wave1 {
@@ -685,7 +700,6 @@ main {
 	position: relative;
 	width: 100%;
 	height: 24rem;
-	margin-bottom: 5rem;
 	z-index: 990;
 }
 
@@ -709,34 +723,150 @@ main {
 .hero-title {
 	z-index: 778;
 	position: absolute;
-	bottom: -18%;
-	left: 50px;
-	font-size: 7rem;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 20%);
+	font-size: 4.5rem;
 	font-weight: 800;
 	text-transform: uppercase;
 	text-align: center;
 	margin: auto;
-	color: transparent;
-	-webkit-text-stroke: 2px var(--amarillo);
-
+	color: var(--blanco);
 }
 
-.hisoria {
+/* HISTORIA */
+.historia {
+	background: url(../img/1.png) no-repeat left;
+	background-size: 55%;
+	background-color: var(--blanco);
+	overflow: hidden;
+	padding: 0;
+	animation: fadeInUp 2s ease;
+}
+
+.historia .container{
+	width: 55%;
+	background-color: var(--blanco);
+	padding: 150px;
+	float: right;
+	
+}
+
+.historia .container .text,.historia .container .title2{
+	animation: fadeInRight 2s ease;
+}
+
+.mision{
+	padding: 50px 100px;
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 30px 100px;
 }
 
-.hisoria .content {
-	display: grid;
-	grid-template-columns: 100px 100px;
-	grid-template-rows: 80px 80px;
-	column-gap: 10px;
-	row-gap: 15px;
+.mision .box{
+	position: relative;
+	width: 600px;
+	background-color: var(--azul);
+	color: var(--blanco);
+	padding: 100px 40px 60px;
+	box-shadow:  0 15px 45px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	animation: fadeInUp 2s ease;
 }
+
+.mision .box::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--amarillo);
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: transform 0.5s;
+}
+
+.mision .box:hover::before{
+	transform: scaleY(1);
+	transform-origin: bottom;
+	transition: transform 0.5s;
+}
+
+.mision .box h2{
+	position: relative;
+	color: var(--amarillo);
+	z-index: 2;
+	transition: 0.5s ease;
+}
+
+.mision .box:hover h2{
+	color: var(--azul);
+}
+
+
+.mision .box i{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 200px;
+	z-index: 1;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.mision .box:hover i{
+	opacity: 1;
+	font-size: 100px;
+	color: var(--azul);
+	transform: translate(-50%, -240%);
+}
+
+.mision .box p{
+	position: relative;
+	z-index: 2;
+	transition: 0.5s;
+}
+
+.mision .box:hover p{
+	color: black;
+}
+
+
+
+/* ANIMATIONS */ 
+
+@keyframes fadeInUp {
+	0%{
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+	
+}
+
+@keyframes fadeInRight {
+	0%{
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+	
+}
+
 
 /* MEDIA QUERYS */
 
-@media(max-width: 1040px) {
+@media(max-width: 1200px) {
 
 	.home {
 		padding: 2rem 3rem;
@@ -906,16 +1036,50 @@ main {
 		transition: 0.3s ease;
 	}
 
+	.historia .container{
+		padding: 80px;
+	}
 
+	.mision{
+		padding:50px;
 
+	}
 
 
 
 }
 
-@media(max-width: 560px) {
+@media(max-width: 800px) {
+
+	.historia{
+		background-size: 100%;
+		padding: 0px 40px;
+	}
+
+	.historia .container{
+		width: 100%;
+	}
+
+	.mision{
+		padding: 20px 50px;
+
+	}
+
+
 	.title {
 		font-size: 5vw;
+	}
+
+	.hero-title{
+		font-size: 4rem;
+	}
+
+	.title2{
+		font-size: 30px;
+	}
+
+	.text{
+		line-height: 1.5;
 	}
 
 }

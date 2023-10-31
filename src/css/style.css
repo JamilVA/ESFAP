@@ -105,7 +105,7 @@ header .navigation .navigation-items a:hover:before {
 	top: 0;
 	width: 100%;
 	z-index: 999;
-	background: linear-gradient(0deg, rgba(255,255,255,0) 22%, rgba(0,0,0,0.6755077030812324) 100%);
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0) 22%, rgba(0, 0, 0, 0.6755077030812324) 100%);
 }
 
 .container {
@@ -367,14 +367,14 @@ main {
 }
 
 
-.title2{
+.title2 {
 	margin-bottom: 10px;
 	font-size: 50px;
 	font-weight: 900;
 	color: var(--azul);
 }
 
-.text{
+.text {
 	font-size: 15px;
 	line-height: 2;
 	text-align: justify;
@@ -582,7 +582,7 @@ main {
 	height: 100px;
 	background: url(../img/wave.png);
 	background-size: 1000px 100px;
-	
+
 }
 
 .footer .wave#wave1 {
@@ -725,18 +725,19 @@ main {
 	bottom: 0;
 	left: 50%;
 	transform: translate(-50%, 10%);
-	font-size: 4.5rem;
+	font-size: 4.2rem;
 	font-weight: 800;
 	text-transform: uppercase;
 	text-align: center;
 	margin: auto;
 	color: var(--blanco);
 	height: 200px;
+	width: 80%;
 }
 
 /* HISTORIA */
-.historia {
-	background: url(../img/1.png) no-repeat left;
+.imagen-texto {
+
 	background-size: 55%;
 	background-color: var(--blanco);
 	overflow: hidden;
@@ -744,19 +745,38 @@ main {
 	animation: fadeInUp 2s ease;
 }
 
-.historia .container{
+.imagen-texto.historia {
+	background: url(../img/nosotros.png) no-repeat left;
+
+}
+
+.imagen-texto.pintura {
+	background: url(../img/pintura.png) no-repeat left;
+}
+
+.imagen-texto.escultura {
+	background: url(../img/escultura-1.png) no-repeat left;
+}
+
+
+.imagen-texto .container {
 	width: 55%;
 	background-color: var(--blanco);
 	padding: 150px;
 	float: right;
-	
+
 }
 
-.historia .container .text,.historia .container .title2{
+.imagen-texto .container .text,
+.imagen-texto .container .title2 {
 	animation: fadeInRight 2s ease;
 }
 
-.mision{
+.imagen-texto .container ul {
+	padding-left: 40px;
+}
+
+.mision {
 	padding: 50px 100px;
 	display: flex;
 	justify-content: center;
@@ -765,18 +785,18 @@ main {
 	gap: 30px 100px;
 }
 
-.mision .box{
+.mision .box {
 	position: relative;
 	width: 600px;
 	background-color: var(--azul);
 	color: var(--blanco);
 	padding: 100px 40px 60px;
-	box-shadow:  0 15px 45px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
 	text-align: center;
 	animation: fadeInUp 2s ease;
 }
 
-.mision .box::before{
+.mision .box::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -789,25 +809,25 @@ main {
 	transition: transform 0.5s;
 }
 
-.mision .box:hover::before{
+.mision .box:hover::before {
 	transform: scaleY(1);
 	transform-origin: bottom;
 	transition: transform 0.5s;
 }
 
-.mision .box h2{
+.mision .box h2 {
 	position: relative;
 	color: var(--amarillo);
 	z-index: 2;
 	transition: 0.5s ease;
 }
 
-.mision .box:hover h2{
+.mision .box:hover h2 {
 	color: var(--azul);
 }
 
 
-.mision .box i{
+.mision .box i {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -818,33 +838,101 @@ main {
 	transition: 0.5s;
 }
 
-.mision .box:hover i{
+.mision .box:hover i {
 	opacity: 1;
 	font-size: 100px;
 	color: var(--azul);
 	transform: translate(-50%, -240%);
 }
 
-.mision .box p{
+.mision .box p {
 	position: relative;
 	z-index: 2;
 	transition: 0.5s;
 }
 
-.mision .box:hover p{
+.mision .box:hover p {
 	color: black;
 }
 
-
-/* BIBLIOTECA VIRTUAL */
-.libros{
+/* PERSONAL DOCENTE */
+.docentes {
 	display: flex;
 	padding: 50px 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 50px 100px; 
+	gap: 50px 30px;
+	animation: fadeInUp 2s ease;
+}
+
+.docentes .docente {
+	width: 230px;
+	height: 300px;
+	background: #f5f5f5;
+	color: #252525;
+	border-radius: 4px;
+	overflow: hidden;
+	line-height: 150%;
+	box-shadow: 0px 10px 20px rgba(80, 80, 80, 0.2);
+	transition: box-shadow .3s ease-in-out;
+}
+
+.docente-info {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	transition: transform .3s ease-in-out;
+	bottom: 0;
+	z-index: 2;
+	background-color: var(--azul);
+	color: var(--blanco);
+}
+
+.docente-img {
+	position: relative;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	z-index: 1;
+}
+
+.docente .docente-info .nombre {
+	font-size: 1.4em;
+	font-weight: bold;
+	line-height: 1.2em;
+	padding-top: 10px;
+}
+
+.docente .docente-info .cargo {
+	letter-spacing: 1px;
+	font-size: 0.9em;
+	color: var(--amarillo);
+}
+
+.docente:hover {
+	box-shadow: 0px 15px 30px rgba(80, 80, 80, 0.3);
+}
+
+.docente:hover .docente-info {
+	transform: translateY(-100px);
+}
+
+
+
+/* BIBLIOTECA VIRTUAL */
+.libros {
+	display: flex;
+	padding: 50px 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 50px 100px;
 	animation: fadeInUp 2s ease;
 }
 
@@ -862,11 +950,9 @@ main {
 	transition: 0.5s ease-in-out;
 }
 
-.libros .libro:hover{
-	
-}
+.libros .libro:hover {}
 
-.libros .libro::before{
+.libros .libro::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -874,17 +960,17 @@ main {
 	width: 100%;
 	height: 100%;
 	display: block;
-	background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,36,121,1) 100%);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 36, 121, 1) 100%);
 	z-index: 2;
 	transition: 0.5s all;
 	opacity: 0;
 }
 
-.libros .libro:hover::before{
+.libros .libro:hover::before {
 	opacity: 1;
 }
 
-.libros .libro img{
+.libros .libro img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -893,7 +979,7 @@ main {
 	left: 0;
 }
 
-.libros .libro .content{
+.libros .libro .content {
 	text-align: center;
 	position: absolute;
 	width: 100%;
@@ -906,25 +992,34 @@ main {
 	transition: 0.5s ease;
 	color: var(--blanco);
 }
-.libros .libro:hover .content{
+
+.libros .libro:hover .content {
 	opacity: 1;
 }
 
-.libros .libro .content h4{
+.libros .libro .content h4 {
 	margin-bottom: 20px;
 }
 
 .libros .libro .content i {
 	font-size: 18px;
 }
-.biblioteca{
+
+.biblioteca {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.biblioteca .categorias{
+.biblioteca .container-categorias {
+	width: 60%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.biblioteca .categorias {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -940,44 +1035,46 @@ main {
 	animation: fadeInRight 2s ease;
 }
 
-.biblioteca .categorias .list{
-	
+.biblioteca .categorias .list {
+
 	padding: 10px 20px;
 	font-weight: 600;
 	cursor: pointer;
 	color: var(--azul);
-	
+
 }
 
-.biblioteca .categorias .list.active{
+.biblioteca .categorias .list.active {
 	background-color: var(--amarillo);
 	color: var(--blanco);
 }
 
-/* ANIMATIONS */ 
+/* ANIMATIONS */
 
 @keyframes fadeInUp {
-	0%{
+	0% {
 		opacity: 0;
 		transform: translateY(50px);
 	}
-	100%{
+
+	100% {
 		opacity: 1;
 		transform: translateY(0px);
 	}
-	
+
 }
 
 @keyframes fadeInRight {
-	0%{
+	0% {
 		opacity: 0;
 		transform: translateX(-50px);
 	}
-	100%{
+
+	100% {
 		opacity: 1;
 		transform: translateX(0px);
 	}
-	
+
 }
 
 
@@ -1153,13 +1250,24 @@ main {
 		transition: 0.3s ease;
 	}
 
-	.historia .container{
-		padding: 80px;
+	.imagen-texto {
+		background-size: 100%;
+		padding: 0px 40px;
 	}
 
-	.mision{
-		padding:50px;
+	.imagen-texto .container {
+		width: 100%;
+		float: none;
+	}
 
+
+	.mision {
+		padding: 50px;
+
+	}
+
+	.hero-title {
+		font-size: 3.5rem;
 	}
 
 
@@ -1168,16 +1276,9 @@ main {
 
 @media(max-width: 800px) {
 
-	.historia{
-		background-size: 100%;
-		padding: 0px 40px;
-	}
 
-	.historia .container{
-		width: 100%;
-	}
 
-	.mision{
+	.mision {
 		padding: 20px 50px;
 
 	}
@@ -1187,15 +1288,15 @@ main {
 		font-size: 5vw;
 	}
 
-	.hero-title{
-		font-size: 3.5rem;
+	.hero-title {
+		font-size: 2.5rem;
 	}
 
-	.title2{
+	.title2 {
 		font-size: 30px;
 	}
 
-	.text{
+	.text {
 		line-height: 1.5;
 	}
 

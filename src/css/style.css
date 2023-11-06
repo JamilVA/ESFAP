@@ -693,6 +693,24 @@ main {
 }
 
 
+.button.download{
+	margin: 50px 0px;
+	width: 15em;
+	background-color: var(--azul);
+	color: var(--blanco);
+
+}
+.button.download::before {
+	background-image: linear-gradient(to right, #f3db00 0%, #F38000 100%);
+
+}
+
+.button.download:hover::before {
+	width: 15em;
+
+}
+
+
 /* HERO */
 
 .hero {
@@ -735,7 +753,7 @@ main {
 	width: 80%;
 }
 
-/* HISTORIA */
+/* NOSOTROS */
 .imagen-texto {
 
 	background-size: 55%;
@@ -756,6 +774,12 @@ main {
 
 .imagen-texto.escultura {
 	background: url(../img/escultura-1.png) no-repeat left;
+}
+.imagen-texto.musica {
+	background: url(../img/musica.png) no-repeat left;
+}
+.imagen-texto.artes-visuales {
+	background: url(../img/artes-visuales.png) no-repeat left;
 }
 
 
@@ -855,6 +879,56 @@ main {
 	color: black;
 }
 
+/* CARRERAS */
+
+.competencias{
+	margin-top: 50px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	display: flex;
+}
+
+.lista-competencias{
+	margin-top: 30px;
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px 100px;
+}
+
+.lista-competencias .competencia{
+	position: relative;
+	width: 400px;
+	height: 200px;
+	background-color: var(--amarillo);
+	border-left: 10px solid var(--azul);
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	padding: 30px 20px;
+}
+
+.competencia .text h3{
+	text-transform: uppercase;
+	text-align: left;
+	line-height: 1.5;
+}
+
+.competencia .text p{
+	margin-top: 10px;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.competencia .icon img{
+	height: 80px;
+	color: var(--blanco);
+	filter: invert(1);
+}
+
 /* PERSONAL DOCENTE */
 .docentes {
 	display: flex;
@@ -930,7 +1004,7 @@ main {
 }
 .documentos{
 	margin-top: 30px;
-	width: 500px;
+	width: 700px;
 	border-bottom: 20px solid var(--azul);
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
@@ -963,6 +1037,7 @@ main {
 	background: var(--grisclaro);
 	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 	transition: 0.5s ease;
+
 }
 
 .documentos ul li:hover{
@@ -972,26 +1047,33 @@ main {
 	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
 	color: var(--blanco);
 }
-.documentos ul i{
+.documentos ul li a i{
 	
 	float: right;
 	font-size: 20px;
-	color: var(--azul);
 }
 
-.documentos ul li span{
+.documentos ul li a span{
 	width: 30px;
 	height: 30px;
 	text-align: center;
 	line-height: 30px;
-	background-color: var(--amarillo);
-	color: var(--blanco);
 	border-radius: 50px;
 	display: inline-block;
 	margin-right: 15px;
+	background-color: var(--amarillo);
 	font-size: 20px;
 	font-weight: 700;
 }
+
+.documentos ul li a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	color: var(--azul);
+}
+
+
 
 
 /* BIBLIOTECA VIRTUAL */

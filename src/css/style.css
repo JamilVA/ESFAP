@@ -389,7 +389,6 @@ main {
 	position: relative;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	flex-wrap: wrap;
 	gap: 100px 50px;
 	padding: 50px 0px;
@@ -693,13 +692,14 @@ main {
 }
 
 
-.button.download{
+.button.download {
 	margin: 50px 0px;
 	width: 15em;
 	background-color: var(--azul);
 	color: var(--blanco);
 
 }
+
 .button.download::before {
 	background-image: linear-gradient(to right, #f3db00 0%, #F38000 100%);
 
@@ -775,9 +775,11 @@ main {
 .imagen-texto.escultura {
 	background: url(../img/escultura-1.png) no-repeat left;
 }
+
 .imagen-texto.musica {
 	background: url(../img/musica.png) no-repeat left;
 }
+
 .imagen-texto.artes-visuales {
 	background: url(../img/artes-visuales.png) no-repeat left;
 }
@@ -881,7 +883,7 @@ main {
 
 /* CARRERAS */
 
-.competencias{
+.competencias {
 	margin-top: 50px;
 	width: 100%;
 	display: flex;
@@ -890,7 +892,7 @@ main {
 	display: flex;
 }
 
-.lista-competencias{
+.lista-competencias {
 	margin-top: 30px;
 	width: 80%;
 	display: flex;
@@ -898,7 +900,7 @@ main {
 	gap: 30px 100px;
 }
 
-.lista-competencias .competencia{
+.lista-competencias .competencia {
 	position: relative;
 	width: 400px;
 	height: 200px;
@@ -911,19 +913,19 @@ main {
 	padding: 30px 20px;
 }
 
-.competencia .text h3{
+.competencia .text h3 {
 	text-transform: uppercase;
 	text-align: left;
 	line-height: 1.5;
 }
 
-.competencia .text p{
+.competencia .text p {
 	margin-top: 10px;
 	font-size: 13px;
 	line-height: 1.5;
 }
 
-.competencia .icon img{
+.competencia .icon img {
 	height: 80px;
 	color: var(--blanco);
 	filter: invert(1);
@@ -998,11 +1000,12 @@ main {
 
 /* DOCUMENTOS */
 
-.containerD{
+.containerD {
 	display: flex;
 	justify-content: center;
 }
-.documentos{
+
+.documentos {
 	margin-top: 30px;
 	width: 700px;
 	border-bottom: 20px solid var(--azul);
@@ -1010,7 +1013,7 @@ main {
 	border-bottom-left-radius: 10px;
 }
 
-.documentos h2{
+.documentos h2 {
 	text-align: center;
 	text-transform: uppercase;
 	color: var(--blanco);
@@ -1023,12 +1026,12 @@ main {
 
 }
 
-.documentos ul{
+.documentos ul {
 	position: relative;
 	background-color: var(--grisclaro);
 }
 
-.documentos ul li{	
+.documentos ul li {
 	font-weight: 700;
 	text-transform: capitalize;
 	list-style: none;
@@ -1037,23 +1040,22 @@ main {
 	background: var(--grisclaro);
 	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 	transition: 0.5s ease;
-
+	animation: fadeInUp 2s ease;
 }
 
-.documentos ul li:hover{
+.documentos ul li:hover {
 	transform: scale(1.1);
 	z-index: 100;
 	background-color: var(--amarillo);
 	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-	color: var(--blanco);
 }
-.documentos ul li a i{
-	
+
+.documentos ul li a i {
 	float: right;
 	font-size: 20px;
 }
 
-.documentos ul li a span{
+.documentos ul li a span {
 	width: 30px;
 	height: 30px;
 	text-align: center;
@@ -1066,15 +1068,105 @@ main {
 	font-weight: 700;
 }
 
-.documentos ul li a{
+.documentos ul li a {
 	display: inline-block;
 	width: 100%;
 	height: 100%;
 	color: var(--azul);
 }
 
+/* NOTICIAS */
+.noticias {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	min-height: 100vw;
+	padding: 50px 100px;
+}
 
+.noticias .post {
+	width: 1000px;
+	height: fit-content;
+	background-color: var(--blanco);
+	display: flex;
+	justify-content: center;
+}
 
+.post .post-hero {
+	width: 600px;
+	max-height: 600px;
+	display: flex;
+	align-items: center;
+}
+
+.post .post-hero img {
+	width: 100%;
+	max-height: 100%;
+}
+
+.post .post-content{
+	width: 400px;
+	padding: 10px 30px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.post .post-date p {
+	font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+	display: inline-block;
+	
+}
+
+.post .post-date p span {
+	color: var(--amarillo);
+}
+
+.post-content .line{
+	background-color: var(--amarillo);
+    width: 26px;
+    height: 2px;
+    margin-bottom: 20px; 
+}
+
+.post-content h3{
+	text-transform: uppercase;
+    color: var(--azul);
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.post-content > p{
+	line-height: 2;
+    margin-bottom: 20px;
+	font-size: 14px;
+	text-align: justify;
+}
+
+.post-content > a{
+	width: fit-content;
+	margin-bottom: 30px;
+}
+
+.post-content .post-meta p{
+	position: absolute;
+	bottom: 10px;
+	left: 30px;
+	font-size: 10px;
+	font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    letter-spacing: 3px;
+	/* display: inline-block; */
+	color: var(--amarillo);
+}
+.post-content .post-meta p span{
+	margin-left: 15px;
+	color: var(--azul);
+}
 
 /* BIBLIOTECA VIRTUAL */
 .libros {

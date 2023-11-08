@@ -789,7 +789,7 @@ main {
 .imagen-texto .container {
 	width: 55%;
 	background-color: var(--blanco);
-	padding: 150px;
+	padding: 80px;
 	float: right;
 
 }
@@ -891,14 +891,15 @@ main {
 	flex-direction: column;
 	align-items: center;
 	display: flex;
+	text-align: center;
 }
 
 .lista-competencias {
 	margin-top: 30px;
-	width: 80%;
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
-	gap: 30px 100px;
+	gap: 30px 50px;
 }
 
 .lista-competencias .competencia {
@@ -911,7 +912,7 @@ main {
 	display: flex;
 	align-items: center;
 	gap: 15px;
-	padding: 30px 20px;
+	padding: 30px 20px 30px 5px;
 }
 
 .competencia .text h3 {
@@ -1024,7 +1025,6 @@ main {
 	font-weight: 700;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
-
 }
 
 .documentos ul {
@@ -1075,6 +1075,9 @@ main {
 	height: 100%;
 	color: var(--azul);
 }
+.documentos ul li a p {
+	display: inline-block;
+}
 
 /* NOTICIAS */
 .noticias {
@@ -1106,7 +1109,7 @@ main {
 	max-height: 100%;
 }
 
-.post .post-content{
+.post .post-content {
 	width: 450px;
 	padding: 10px 30px;
 	display: flex;
@@ -1116,56 +1119,57 @@ main {
 
 .post .post-date p {
 	font-size: 10px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	letter-spacing: 2px;
 	display: inline-block;
-	
+
 }
 
 .post .post-date p span {
 	color: var(--amarillo);
 }
 
-.post-content .line{
+.post-content .line {
 	background-color: var(--amarillo);
-    width: 26px;
-    height: 2px;
-    margin-bottom: 20px; 
+	width: 26px;
+	height: 2px;
+	margin-bottom: 20px;
 }
 
-.post-content h3{
+.post-content h3 {
 	text-transform: uppercase;
-    color: var(--azul);
-    font-size: 24px;
-    margin-bottom: 30px;
+	color: var(--azul);
+	font-size: 24px;
+	margin-bottom: 30px;
 }
 
-.post-content > p{
+.post-content>p {
 	line-height: 2;
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 	font-size: 14px;
 	text-align: justify;
 }
 
-.post-content > a{
+.post-content>a {
 	width: fit-content;
 	margin-bottom: 30px;
 }
 
-.post-content .post-meta p{
+.post-content .post-meta p {
 	position: absolute;
 	bottom: 10px;
 	left: 30px;
 	font-size: 10px;
 	font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 0;
-    letter-spacing: 3px;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	letter-spacing: 3px;
 	/* display: inline-block; */
 	color: var(--amarillo);
 }
-.post-content .post-meta p span{
+
+.post-content .post-meta p span {
 	margin-left: 15px;
 	color: var(--azul);
 }
@@ -1454,6 +1458,7 @@ main {
 
 	.imagen-texto .container {
 		width: 100%;
+		padding: 50px;
 		float: none;
 	}
 
@@ -1475,13 +1480,14 @@ main {
 		width: 100%;
 
 	}
-	
+
 	.post .post-hero {
 		width: 50%;
 		max-height: 450px;
 
 	}
-	.post .post-content{
+
+	.post .post-content {
 		width: 50%;
 		padding: 10px 20px;
 	}
@@ -1516,8 +1522,33 @@ main {
 		line-height: 1.5;
 	}
 
-	.noticias{
-		gap:50px
+	.imagen-texto .container {
+		padding: 20px;
+	}
+
+	.documentos {
+		width: 85%;
+	}
+	
+	.documentos ul li {
+		font-weight: 700;
+		font-size: 13px;
+		padding: 15px 10px;
+		line-height: 1.5;
+	}
+
+	.documentos ul li a span {
+		display: none;
+	}
+	
+	.documentos ul li a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.noticias {
+		gap: 50px
 	}
 
 	.noticias .post {
@@ -1530,37 +1561,102 @@ main {
 		max-height: 450px;
 	}
 
-	.post .post-hero img{
+	.post .post-hero img {
 		max-height: 450px;
 	}
 
-	.post .post-content{
+	.post .post-content {
 		width: 85%;
 		padding: 10px 20px;
 	}
 
-	.post-content h3{
+	.post-content h3 {
 		font-size: 18px;
 		margin-bottom: 15px;
 	}
-	
-	.post-content > p{
+
+	.post-content>p {
 		line-height: 1.5;
 		font-size: 12px;
 		margin-bottom: 10px;
 	}
 }
 
-@media(max-width:576px){
+@media(max-width:576px) {
+
+	.title {
+
+		font-weight: 600;
+		text-transform: uppercase;
+		color: var(--azul);
+
+	}
+
+	.hero-title {
+		font-size: 2rem;
+	}
 
 	.post .post-hero {
 		max-height: 300px;
 	}
 
-	.post .post-hero img{
+	.post .post-hero img {
 		max-height: 300px;
 	}
-	.post .post-content{
+
+	.post .post-content {
 		width: 100%;
 	}
+
+	.main-carreras .card {
+		width: 280px;
+	}
+
+	.main-carreras .card .card-img{
+		width: 280px;
+	}
+
+	.main-carreras .card .card-content {
+		padding: 0 10px;
+		
+	}
+
+	.main-carreras .card .card-content h3 {
+		font-size: .8em;
+		padding-bottom: 15px;
+	}
+
+	.main-carreras .card .card-content p {
+		font-size: .7em;
+		
+	}
+
+	.lista-competencias .competencia {
+		width: 300px;
+		height: 175px;
+		gap: 10px;
+	}
+
+	.competencia .icon img {
+		height: 50px;
+	}
+
+	.competencia .text h3 {
+		line-height: 1.5;
+		font-size: 15px;
+	}
+	
+	.competencia .text p {
+		margin-top: 10px;
+		font-size: 11px;
+		line-height: 1.5;
+	}
+
+	.documentos h2 {
+		padding: 20px 15px;
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+
 }

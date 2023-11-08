@@ -1082,7 +1082,7 @@ main {
 	flex-direction: column;
 	align-items: center;
 	gap: 30px;
-	width: 100vw;
+	width: 100%;
 	padding: 50px 100px;
 }
 
@@ -1095,7 +1095,7 @@ main {
 }
 
 .post .post-hero {
-	width: 600px;
+	width: 550px;
 	max-height: 600px;
 	display: flex;
 	align-items: center;
@@ -1107,7 +1107,7 @@ main {
 }
 
 .post .post-content{
-	width: 400px;
+	width: 450px;
 	padding: 10px 30px;
 	display: flex;
 	flex-direction: column;
@@ -1337,52 +1337,6 @@ main {
 		margin-top: 10px;
 	}
 
-	/* header {
-		padding: 12px 20px;
-	}
-
-	header .navigation {
-		display: none;
-	}
-
-	header .navigation.active {
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		top: 0;
-		left: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: rgba(1, 1, 1, 0.5);
-	}
-
-	header .navigation .navigation-items a {
-		color: var(--blanco);
-		font-size: 1.2em;
-		margin: 20px;
-	}
-
-	header .navigation .navigation-items a::before {
-		background: #2696E9;
-		height: 5px;
-
-	}
-
-	header .navigation.active .navigation-items {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		background: var(--amarillo);
-		width: 600px;
-		max-width: 600px;
-		margin: 20px;
-		padding: 40px;
-		border-radius: 5px;
-		box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
-	} */
-
 	.header .menu-btn {
 		display: inline-block;
 	}
@@ -1476,9 +1430,6 @@ main {
 		justify-content: center;
 	}
 
-
-
-
 	.title {
 		font-size: 5vw;
 	}
@@ -1516,6 +1467,25 @@ main {
 		font-size: 3.5rem;
 	}
 
+	.noticias {
+		padding: 30px 30px;
+	}
+
+	.noticias .post {
+		width: 100%;
+
+	}
+	
+	.post .post-hero {
+		width: 50%;
+		max-height: 450px;
+
+	}
+	.post .post-content{
+		width: 50%;
+		padding: 10px 20px;
+	}
+
 
 
 }
@@ -1546,4 +1516,51 @@ main {
 		line-height: 1.5;
 	}
 
+	.noticias{
+		gap:50px
+	}
+
+	.noticias .post {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.post .post-hero {
+		width: 60%;
+		max-height: 450px;
+	}
+
+	.post .post-hero img{
+		max-height: 450px;
+	}
+
+	.post .post-content{
+		width: 85%;
+		padding: 10px 20px;
+	}
+
+	.post-content h3{
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	
+	.post-content > p{
+		line-height: 1.5;
+		font-size: 12px;
+		margin-bottom: 10px;
+	}
+}
+
+@media(max-width:576px){
+
+	.post .post-hero {
+		max-height: 300px;
+	}
+
+	.post .post-hero img{
+		max-height: 300px;
+	}
+	.post .post-content{
+		width: 100%;
+	}
 }

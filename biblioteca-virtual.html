@@ -52,7 +52,7 @@
                         <a class="menu-item" href="#">Mas</a>
                         <ul class="sub-menu">
                             <li><a href="contacto.html"><span>Contacto</span></a></li>
-                            <li><a href=""><span>SIA</span></a></li>
+                            <li><a href="404.html"><span>SIA</span></a></li>
                             <li><a href="biblioteca-virtual.html"><span>Biblioteca Virtual</span></a></li>
                         </ul>
                     </li>
@@ -73,18 +73,16 @@
             <h2 class="title">Tu fuente de inspiración</h2>
             <div class="container-categorias">
                 <ul class="categorias">
-                    <li class="list active">Todos</li>
-                    <li class="list">Arte</li>
-                    <li class="list">Escultura</li>
-                    <li class="list">Musica</li>
-                    <li class="list">Cajamarca</li>
-                </ul>
+                    <li class="list active" data-filter="all">Todos</li>
+                    <li class="list" data-filter="arte">Arte</li>
+                    <li class="list" data-filter="escultura">Escultura</li>
+                    <li class="list" data-filter="musica">Musica</li>                </ul>
                 <ul class="categorias">
-                    <li class="list ">Tesoro Literario Cajamarca</li>
+                    <li class="list" data-filter="cajamarca">Tesoro Literario Cajamarca</li>
                 </ul>
             </div>
             <div class="libros">
-                <div class="libro">
+                <div class="libro" data-item="arte">
                     <img src="src/img/libros/1.jpg" alt=" Potada Libro">
                     <div class="content">
                         <h4>Donde la muerte es vida: Iconografía Nasca y Simbolísmo</h4>
@@ -97,7 +95,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="libro">
+                <div class="libro" data-item="arte">
                     <img src="src/img/libros/1.jpg" alt=" Potada Libro">
                     <div class="content">
                         <h4>Donde la muerte es vida: Iconografía Nasca y Simbolísmo</h4>
@@ -110,7 +108,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="libro">
+                <div class="libro" data-item="arte">
                     <img src="src/img/libros/1.jpg" alt=" Potada Libro">
                     <div class="content">
                         <h4>Donde la muerte es vida: Iconografía Nasca y Simbolísmo</h4>
@@ -123,7 +121,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="libro">
+                <div class="libro" data-item="musica">
                     <img src="src/img/libros/1.jpg" alt=" Potada Libro">
                     <div class="content">
                         <h4>Donde la muerte es vida: Iconografía Nasca y Simbolísmo</h4>
@@ -136,7 +134,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="libro">
+                <div class="libro" data-item="musica">
                     <img src="src/img/libros/1.jpg" alt=" Potada Libro">
                     <div class="content">
                         <h4>Donde la muerte es vida: Iconografía Nasca y Simbolísmo</h4>
@@ -149,7 +147,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="libro">
+                <div class="libro" data-item="cajamarca">
                     <img src="src/img/libros/1.jpg" alt=" Potada Libro">
                     <div class="content">
                         <h4>Donde la muerte es vida: Iconografía Nasca y Simbolísmo</h4>
@@ -162,7 +160,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="libro">
+                <div class="libro" data-item="escultura">
                     <img src="src/img/libros/1.jpg" alt=" Potada Libro">
                     <div class="content">
                         <h4>Donde la muerte es vida: Iconografía Nasca y Simbolísmo</h4>
@@ -175,7 +173,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="libro">
+                <div class="libro" data-item="escultura">
                     <img src="src/img/libros/1.jpg" alt=" Potada Libro">
                     <div class="content">
                         <h4>Donde la muerte es vida: Iconografía Nasca y Simbolísmo</h4>
@@ -237,6 +235,7 @@
     </footer>
 
     <script src="src/js/scripts.js"></script>
+    <script src="src/js/biblioteca.js"></script>
 </body>
 
 </html>

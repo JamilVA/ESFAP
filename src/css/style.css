@@ -708,7 +708,24 @@ main {
 
 .button.download:hover::before {
 	width: 15em;
+}
 
+
+.button2 {
+	width: 15rem;
+	height: 4rem;
+	font-size: 18px;
+	border: none;
+	text-transform: uppercase;
+	background-color: var(--azul);
+	color: var(--blanco);
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+
+.button2:hover {
+	background-color: var(--amarillo);
+	color: var(--azul);
 }
 
 
@@ -1041,7 +1058,11 @@ main {
 	background: var(--grisclaro);
 	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 	transition: 0.5s ease;
-	animation: fadeInUp 2s ease;
+	animation: fadeInUp 1s ease;
+}
+
+.documentos ul .doc.hide{
+	display: none;
 }
 
 .documentos ul li:hover {
@@ -1095,6 +1116,7 @@ main {
 	background-color: var(--blanco);
 	display: flex;
 	justify-content: center;
+	animation: fadeInRight 2s ease;
 }
 
 .post .post-hero {
@@ -1182,7 +1204,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 50px 100px;
+	gap: 50px 50px;
 	animation: fadeInUp 2s ease;
 }
 
@@ -1198,6 +1220,10 @@ main {
 	justify-content: center;
 	box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
 	transition: 0.5s ease-in-out;
+}
+
+.libros .libro.hide{
+	display: none;
 }
 
 .libros .libro:hover {}
@@ -1265,8 +1291,9 @@ main {
 .biblioteca .container-categorias {
 	width: 60%;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
+	gap: 20px 100px;
 }
 
 .biblioteca .categorias {
@@ -1530,7 +1557,7 @@ main {
 		width: 85%;
 	}
 	
-	.documentos ul li {
+	.documentos ul .doc {
 		font-weight: 700;
 		font-size: 13px;
 		padding: 15px 10px;

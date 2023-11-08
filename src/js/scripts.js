@@ -1,3 +1,4 @@
+/* NAVBAR RESPONSIVE */
 const menuBtn = document.querySelector(".menu-btn");
 
 const menu = document.querySelector(".menu");
@@ -22,12 +23,3 @@ for(let i = 0; i< dropdown.length;i++){
 };
 
 
-
-
-
-
-// menu.querySelectorAll(".dropdown").forEach((arrow => {
-//     arrow.addEventListener("click",()=>{
-//         this.closest(".dropdown").classList.toggle("active");
-//     })
-// }))

@@ -1,14 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 :root {
 	--amarillo: #ffa303;
 	--azul: #002479;
 	--azul2: #00234C;
 	--blanco: #f7fff7;
-	--grisclaro: #c0c0c0;
-	--grisoscuro: #738290;
+	--grisclaro: #D3D4D9;
+	--grisoscuro: #BEC0C6;
+	--text-muted: #7B828E;
 	--celeste: #2696E9
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 .amarillo {
 	background-color: var(--amarillo);
@@ -337,7 +338,7 @@ main {
 
 .title {
 	position: relative;
-	font-size: 3vw;
+	font-size: 3.2vw;
 	font-weight: 800;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -370,12 +371,12 @@ main {
 .title2 {
 	margin-bottom: 10px;
 	font-size: 50px;
-	font-weight: 900;
+	font-weight: 800;
 	color: var(--azul);
 }
 
 .text {
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 2;
 	text-align: justify;
 }
@@ -666,7 +667,7 @@ main {
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
-
+	background-color: var(--grisclaro);
 }
 
 .button:hover {
@@ -761,7 +762,7 @@ main {
 	bottom: 0;
 	left: 50%;
 	transform: translate(-50%, 10%);
-	font-size: 3.85rem;
+	font-size: 4rem;
 	font-weight: 800;
 	text-transform: uppercase;
 	text-align: center;
@@ -963,7 +964,7 @@ main {
 }
 
 .docentes .docente {
-	width: 230px;
+	width: 250px;
 	height: 300px;
 	background: #f5f5f5;
 	color: #252525;
@@ -998,13 +999,13 @@ main {
 
 .docente .docente-info .nombre {
 	font-size: 1.4em;
-	font-weight: bold;
+	font-weight: 600;
 	line-height: 1.2em;
 	padding-top: 10px;
 }
 
 .docente .docente-info .cargo {
-	letter-spacing: 1px;
+	letter-spacing: 0px;
 	font-size: 0.9em;
 	color: var(--amarillo);
 }
@@ -1038,7 +1039,7 @@ main {
 	color: var(--blanco);
 	background-color: var(--azul);
 	padding: 30px 20px;
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: 700;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
@@ -1061,7 +1062,7 @@ main {
 	animation: fadeInUp 1s ease;
 }
 
-.documentos ul .doc.hide{
+.documentos ul .doc.hide {
 	display: none;
 }
 
@@ -1087,7 +1088,6 @@ main {
 	margin-right: 15px;
 	background-color: var(--amarillo);
 	font-size: 20px;
-	font-weight: 700;
 }
 
 .documentos ul li a {
@@ -1096,8 +1096,10 @@ main {
 	height: 100%;
 	color: var(--azul);
 }
+
 .documentos ul li a p {
 	display: inline-block;
+	font-weight: 600;
 }
 
 /* NOTICIAS */
@@ -1163,6 +1165,7 @@ main {
 	text-transform: uppercase;
 	color: var(--azul);
 	font-size: 24px;
+	font-weight: 600;
 	margin-bottom: 30px;
 }
 
@@ -1183,7 +1186,7 @@ main {
 	bottom: 10px;
 	left: 30px;
 	font-size: 10px;
-	font-weight: 700;
+	font-weight: 600;
 	text-transform: uppercase;
 	margin-bottom: 0;
 	letter-spacing: 3px;
@@ -1222,7 +1225,7 @@ main {
 	transition: 0.5s ease-in-out;
 }
 
-.libros .libro.hide{
+.libros .libro.hide {
 	display: none;
 }
 
@@ -1325,6 +1328,177 @@ main {
 	background-color: var(--amarillo);
 	color: var(--blanco);
 }
+
+/* CONTACTO */
+
+.contacto {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: var(--amarillo);
+	position: relative;
+}
+
+.contacto::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: url(../img/nosotros.png) no-repeat left;
+	background-size: cover;
+}
+
+.contacto .container{
+	position: relative;
+	min-width: 1100px;
+	min-height: 600px;
+	display: flex;
+	z-index: 100;
+}
+
+.contacto .container .contacto-info {
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width: 350px;
+	height: calc(100% - 80px);
+	background-color: var(--amarillo);
+	z-index: 1;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+}
+
+.contacto .container .contacto-form{
+	position: absolute;
+	padding: 70px 50px;
+	padding-left: 230px;
+	margin-left: 150px;
+	width: calc(100% - 150px);
+	height: 100%;
+	background-color: var(--blanco);
+	box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25);
+}
+
+.contacto-form .contacto-heading h1{
+	font-weight: 600;
+	color: var(--azul);
+	font-size: 2rem;
+	line-height: 0.9;
+	white-space: nowrap;
+	margin-bottom: 1.5rem;
+}
+
+.contacto-form .contacto-heading h1 span, .contacto-form .contacto-heading p span{
+	color: var(--amarillo);
+}
+
+.contacto-form .contacto-heading p{
+	margin-left: 5px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: var(--azul);
+}
+
+.contacto-form form{
+	display: grid;
+	margin-top: 2rem;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 2rem;
+	row-gap: 1rem;
+}
+
+form .input-group{
+	position: relative;
+}
+
+form .input-group.w-100{
+	grid-column: span 2;
+}
+
+form .input-group .input{
+	width: 100%;
+	border-radius: 20px;
+	background-color: var(--grisclaro);
+	padding: 1.5rem 1.35rem calc(0.75rem - 2px) 1.35rem;
+	border: none;
+	outline: none;
+	color: var(--azul);
+	font-size: 14;
+	font-weight: 500;
+	transition: 0.3s;
+	border: 2px solid transparent;
+}
+
+form .input-group .input:hover{
+	background-color: var(--grisoscuro);
+}
+
+form .input-group label{
+	position: absolute;
+	top: 50%;
+	left: calc(1.35rem + 2px);
+	transform: translateY(-50%);
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--text-muted);
+	pointer-events: none;
+	transition: 0.3s;
+}
+
+form .input-group i{
+	position: absolute;
+	right: calc(1.35rem + 2px);
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 25px;
+	color: var(--azul);
+	pointer-events: none;
+}
+
+form .input-group textarea.input{
+	resize: none;
+	width: 100%;
+	min-height: 150px;
+}
+
+form .input-group.textarea > label{
+	top: 1.2rem;
+	transform: none;
+}
+
+form .input-group.textarea > i{
+	top: 1.2rem;
+	transform: none;
+}
+
+form .input-group.focus .input{
+	border: 2px solid var(--azul);
+	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+form .input-group.focus label{
+	color: var(--azul);
+}
+
+form .input-group.not-empty label{
+	font-size: 0.6rem;
+	top: 0.75rem;
+	transform: translateY(0);
+}
+
+
+
+
 
 /* ANIMATIONS */
 
@@ -1556,7 +1730,7 @@ main {
 	.documentos {
 		width: 85%;
 	}
-	
+
 	.documentos ul .doc {
 		font-weight: 700;
 		font-size: 13px;
@@ -1567,7 +1741,7 @@ main {
 	.documentos ul li a span {
 		display: none;
 	}
-	
+
 	.documentos ul li a {
 		display: flex;
 		justify-content: space-between;
@@ -1639,13 +1813,13 @@ main {
 		width: 280px;
 	}
 
-	.main-carreras .card .card-img{
+	.main-carreras .card .card-img {
 		width: 280px;
 	}
 
 	.main-carreras .card .card-content {
 		padding: 0 10px;
-		
+
 	}
 
 	.main-carreras .card .card-content h3 {
@@ -1655,7 +1829,7 @@ main {
 
 	.main-carreras .card .card-content p {
 		font-size: .7em;
-		
+
 	}
 
 	.lista-competencias .competencia {
@@ -1672,7 +1846,7 @@ main {
 		line-height: 1.5;
 		font-size: 15px;
 	}
-	
+
 	.competencia .text p {
 		margin-top: 10px;
 		font-size: 11px;

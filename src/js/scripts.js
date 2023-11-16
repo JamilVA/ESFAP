@@ -37,20 +37,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const btns = document.querySelectorAll(".nav-btn")
 const videos = document.querySelectorAll(".video-slider")
+const contents = document.querySelectorAll(".content-slider")
 
 var sliderNav = function (manual) {
     btns.forEach((btn) => {
-        btn.classList.remove("active")
+        btn.classList.remove("active");
     })
 
     videos.forEach((video) => {
-        video.classList.remove("active")
+        video.classList.remove("active");
         video.pause();
         video.currentTime = 0;
     })
 
+    contents.forEach((content) => {
+        content.classList.remove("active");
+    })
+
     btns[manual].classList.toggle("active");
     videos[manual].classList.toggle("active");
+    contents[manual].classList.toggle("active");
     videos[manual].play();
 }
 
@@ -59,6 +65,8 @@ btns.forEach((btn, i) => {
         sliderNav(i);
     })
 })
+
+/* PAUSAR SI NO ESTAN EN VISTA */
 
 document.addEventListener("DOMContentLoaded", function() {
     var lazyVideos = document.querySelectorAll(".lazy-video");

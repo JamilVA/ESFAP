@@ -364,7 +364,7 @@ main {
 .card-carrera {
 	display: grid;
 	grid-template-columns: 300px;
-	grid-template-rows: 210px 210px 50px;
+	grid-template-rows: 210px 250px 50px;
 	grid-template-areas: "image" "text" "button";
 
 	border-radius: 15px;
@@ -411,10 +411,16 @@ main {
 }
 
 .card-carrera .card-text h3 {
-	text-transform: capitalize;
-	color: var(--azul);
+	color: black;
 	margin-bottom: 10px;
+	font-size: 15px;
+}
+
+.card-carrera .card-text h3 span{
+	color: var(--azul);
 	font-size: 20px;
+	display: block;
+	margin-top: 10px;
 }
 
 .card-carrera .card-text p {

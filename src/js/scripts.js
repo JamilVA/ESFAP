@@ -22,6 +22,17 @@ for (let i = 0; i < dropdown.length; i++) {
     })
 };
 
+/* LAZY LOAD VIDEOS */
+
+document.addEventListener("DOMContentLoaded", function() {
+    var lazyVideos = document.querySelectorAll("video[data-src]");
+
+    lazyVideos.forEach(function(video) {
+        video.src = video.getAttribute("data-src");
+        video.load();
+    });
+});
+
 /* VIDEO SLIDER */
 
 const btns = document.querySelectorAll(".nav-btn")
@@ -48,5 +59,36 @@ btns.forEach((btn, i) => {
         sliderNav(i);
     })
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+    var lazyVideos = document.querySelectorAll(".lazy-video");
+
+    function checkIfInView() {
+        lazyVideos.forEach(function(video) {
+            var rect = video.getBoundingClientRect();
+
+            // Si el video está en la vista
+            if (rect.top >= -300 && rect.bottom <= window.innerHeight+300) {
+                if (!video.getAttribute("data-loaded")) {
+                    video.src = video.getAttribute("data-src");
+                    video.load();
+                    video.setAttribute("data-loaded", true);
+                }
+                video.play();
+            } else {
+                // Si el video está fuera de la vista, pausar la reproducción
+                video.pause();
+            }
+        });
+    }
+
+    // Verificar cuando se carga la página y al desplazarse
+    window.addEventListener("scroll", checkIfInView);
+    window.addEventListener("resize", checkIfInView);
+    document.addEventListener("DOMContentLoaded", checkIfInView);
+});
+
+
+
 
 

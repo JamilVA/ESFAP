@@ -364,6 +364,8 @@ main {
 	color: transparent;
 	-webkit-text-stroke: 1px var(--azul);
 	width: fit-content;
+	line-height: 1.3;
+	margin-top: 10px;
 
 }
 
@@ -1586,6 +1588,61 @@ form .input-group.not-empty label{
 	height: 100%;
 }
 
+/* ACTAS */
+
+.actas{
+	width: 100%;
+	padding: 50px 100px;
+	display: flex;
+	justify-content: space-around;
+	gap: 100px;
+}
+
+.actas .title2{
+	font-size: 40px;
+}
+
+
+.actas .container{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	flex: 5;
+}
+
+.actas .aside{
+	flex: 3;
+
+}
+
+.grupo-actas .acta{
+	font-weight: 700;
+	text-transform: capitalize;
+	list-style: none;
+	padding: 15px 30px;
+	width: 100%;
+	background: var(--grisclaro);
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	transition: 0.5s ease;
+	animation: fadeInUp 1s ease;
+}
+
+.grupo-actas .acta:hover {
+	transform: scale(1.07);
+	z-index: 100;
+	background-color: var(--amarillo);
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.grupo-actas .acta a{
+	color: var(--azul);
+}
+
+.grupo-actas .acta a i {
+	float: right;
+	font-size: 20px;
+}
+
 /* ANIMATIONS */
 
 @keyframes fadeInUp {
@@ -1825,6 +1882,30 @@ form .input-group.not-empty label{
 		column-gap: .75rem;
 	}
 
+	.actas{
+		padding: 50px 50px;
+		gap: 50px;
+	}
+
+	.actas .title2{
+		font-size: 30px;
+	}
+	
+	.actas .container{
+		gap: 30px;
+		flex: 5;
+	}
+	
+	.actas .aside{
+		flex: 3;
+	}
+
+	.grupo-actas .acta{
+		font-weight: 600;
+		text-transform: capitalize;
+		padding: 15px 10px;
+	}
+
 }
 
 @media(max-width: 1000px) {
@@ -1856,6 +1937,29 @@ form .input-group.not-empty label{
 
 	.contacto .container .contacto-form .input-group{
 		grid-column: span 2;
+	}
+
+	.actas{
+		padding: 40px 40px;
+		gap: 30px;
+		flex-direction: column;
+	}
+	.actas .container{	
+		width: 100%;
+		flex: 1;
+	}
+	
+	.actas .aside{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		flex: 1;
+	}
+
+	.actas .aside .grupo-actas{
+		width: 100%;
+		max-width: 83vw;
+		padding: 0 15px;
 	}
 }
 
@@ -1968,6 +2072,17 @@ form .input-group.not-empty label{
 
 	.post .post-content {
 		width: 100%;
+		padding: 0;
+	}
+
+	.post .post-content a{
+		margin-bottom: 35px;
+	}
+
+	.post .post-content .post-meta p{
+		font-size: 9px;
+		letter-spacing: 2px;
+		left: 0;
 	}
 
 	.main-carreras .card {
@@ -2045,6 +2160,30 @@ form .input-group.not-empty label{
 
 	.contacto-info .info li span{
 		font-size: 13px;
+	}
+
+	.actas{
+		padding: 20px;
+		gap: 30px;
+	}
+
+	.actas .title2{
+		font-size: 20px;
+	}
+
+	.actas .container{	
+		width: 100%;
+		max-width: 100vh;
+		padding: 0;
+	}
+	
+	.actas .aside{
+
+	}
+
+	.actas .aside .grupo-actas{
+		max-width: 100vw;
+		padding: 0;
 	}
 
 }

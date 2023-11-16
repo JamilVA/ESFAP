@@ -1248,8 +1248,6 @@ main {
 	display: none;
 }
 
-.libros .libro:hover {}
-
 .libros .libro::before {
 	content: '';
 	position: absolute;
@@ -1775,8 +1773,6 @@ form .input-group.not-empty label{
 		border: none;
 	}
 
-	.header .menu .sub-menu span {}
-
 	.header .menu .open-menu-btn {
 		display: inline-flex;
 		justify-content: center;
@@ -2166,10 +2162,6 @@ form .input-group.not-empty label{
 		padding: 0;
 	}
 	
-	.actas .aside{
-
-	}
-
 	.actas .aside .grupo-actas{
 		max-width: 100vw;
 		padding: 0;

@@ -93,32 +93,31 @@
                         <h2>¡Encuentra tu Inspiración: <span>Contáctanos!</span></h2>
                         <p>ESFAP <span>"Mario Urteaga Alvarado"</span> - Cajamarca</p>
                     </div>
-                    <form action="contacto.html" method="post">
+                    <form id="form" action="/src/php/enviar.php" method="POST">
                         <div class="input-group">
                             <label for="nombres">Nombres</label>
                             <i class='bx bxs-id-card'></i>
-                            <input class="input" type="text" id="nombres" required>
+                            <input class="input" type="text" name="nombres" id="nombres" required>
                         </div>
                         <div class="input-group">
                             <label for="apellidos">Apellidos</label>
                             <i class='bx bxs-id-card'></i>
-                            <input class="input" type="text" id="apellidos" required>
+                            <input class="input" type="text" name="apellidos" id="apellidos" required>
                         </div>
                         <div class="input-group w-100">
                             <label for="email">Correo</label>
                             <i class='bx bxs-envelope'></i>
-                            <input class="input" type="email" id="email" autocomplete="email" required>
+                            <input class="input" type="email" name="email" id="email" autocomplete="email" required>
                         </div>
                         <div class="input-group textarea w-100">
                             <label for="mensaje">Mensaje</label>
                             <i class='bx bxs-chat'></i>
-                            <textarea id="mensaje" class="input" required></textarea>
+                            <textarea id="mensaje" class="input" name="mensaje" required></textarea>
                         </div>
                         <div class="contacto-button w-100">
-                            <a href="">
-                                <button class="button download">Enviar <i class='bx bxs-send'></i></button>
-                            </a>
+                            <button type="submit" class="button download">Enviar <i class='bx bxs-send'></i></button>
                         </div>
+                        <div id="respuesta"></div>
                     </form>
                 </div>
             </div>
@@ -182,6 +181,9 @@
 
     <script src="src/js/scripts.js"></script>
     <script src="src/js/contacto.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

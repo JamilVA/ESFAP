@@ -16,3 +16,35 @@ inputs.forEach(i =>{
         
     })
 })
+
+
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Envía el formulario utilizando AJAX
+    var formData = new FormData(this);
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Éxito: Muestra un cuadro de diálogo con SweetAlert
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Correo enviado con éxito',
+                    text: xhr.responseText
+                });
+            } else {
+                // Error: Muestra un cuadro de diálogo de error con SweetAlert
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error al enviar el formulario',
+                    text: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.'
+                });
+            }
+        }
+    };
+
+    xhr.open('POST', '../php/enviar.php', true);
+    xhr.send(formData);
+});

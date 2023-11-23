@@ -416,7 +416,7 @@ main {
 	font-size: 15px;
 }
 
-.card-carrera .card-text h3 span{
+.card-carrera .card-text h3 span {
 	color: var(--azul);
 	font-size: 20px;
 	display: block;
@@ -735,15 +735,21 @@ main {
 	position: absolute;
 	bottom: 0;
 	left: 50%;
-	transform: translate(-50%, 10%);
+	transform: translate(-50%, 20%);
 	font-size: 4rem;
 	font-weight: 800;
 	text-transform: uppercase;
 	text-align: center;
+	line-height: 1.25;
 	margin: auto;
 	color: var(--blanco);
 	height: 200px;
 	width: 80%;
+}
+
+.hero-title span {
+	display: block;
+	font-size: 1.5rem;
 }
 
 /* NOSOTROS */
@@ -911,6 +917,12 @@ main {
 	text-transform: uppercase;
 	text-align: left;
 	line-height: 1.5;
+}
+
+.competencia .text h4 {
+	text-align: justify;
+	font-weight: 600;
+	line-height: 1.75;
 }
 
 .competencia .text p {
@@ -1773,6 +1785,10 @@ form .input-group.not-empty label {
 		font-size: 3.5rem;
 	}
 
+	.hero-title span {
+		font-size: 1.3rem;
+	}
+
 	.noticias {
 		padding: 30px 30px;
 	}
@@ -1944,6 +1960,10 @@ form .input-group.not-empty label {
 		font-size: 2.5rem;
 	}
 
+	.hero-title span {
+		font-size: 0.9rem;
+	}
+
 	.title2 {
 		font-size: 30px;
 	}
@@ -1952,12 +1972,15 @@ form .input-group.not-empty label {
 		line-height: 1.5;
 	}
 
-	.imagen-texto .container {
-		padding: 20px;
+	.imagen-texto {
+		background-size: 100%;
+		padding: 0px;
 	}
 
-	.documentos {
-		width: 85%;
+	.mision .box i {
+		left: 50%;
+		top: 60%;
+		transform: translate(-50%, -50%);
 	}
 
 	.documentos ul .doc {
@@ -2039,6 +2062,27 @@ form .input-group.not-empty label {
 		font-size: 2rem;
 	}
 
+	.hero-title span {
+		font-size: 0.75rem;
+	}
+
+	.imagen-texto .container {
+		padding: 20px;
+		max-width: 100%;
+	}
+
+	.mision {
+		padding: 0px;
+	}
+
+	.documentos {
+		width: 85%;
+	}
+
+	.mision .box i {
+		display: none;
+	}
+
 	.post .post-hero {
 		max-height: 300px;
 	}
@@ -2075,6 +2119,11 @@ form .input-group.not-empty label {
 	.competencia .text h3 {
 		line-height: 1.5;
 		font-size: 15px;
+	}
+
+	.competencia .text h4 {
+		font-weight: 500;
+		line-height: 1.5;
 	}
 
 	.competencia .text p {

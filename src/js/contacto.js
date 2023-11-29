@@ -21,21 +21,30 @@ inputs.forEach(i =>{
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Envía el formulario utilizando AJAX
+    Swal.fire({
+        title: 'Enviando correo',
+        icon: 'info',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        didOpen: () => {
+            Swal.showLoading();
+        },
+    });
+
     var formData = new FormData(this);
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
+
+            Swal.close();
+
             if (xhr.status === 200) {
-                // Éxito: Muestra un cuadro de diálogo con SweetAlert
                 Swal.fire({
                     icon: 'success',
                     title: 'Correo enviado con éxito',
-                    text: xhr.responseText
                 });
             } else {
-                // Error: Muestra un cuadro de diálogo de error con SweetAlert
                 Swal.fire({
                     icon: 'error',
                     title: 'Error al enviar el formulario',
@@ -45,6 +54,6 @@ document.getElementById('form').addEventListener('submit', function(event) {
         }
     };
 
-    xhr.open('POST', '../php/enviar.php', true);
+    xhr.open('POST', '/src/php/enviar.php', true);
     xhr.send(formData);
 });

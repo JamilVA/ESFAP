@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESFAP Mario Urteaga Alvarado</title>
+
+    <link rel="icon" href="src/img/icono.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="src/img/LOGO ESFA OK.png" alt="logo ESFAP MUA" style="max-width: 100px;"></a>
+            </div>
+            <div class="menu-btn"><i class='bx bx-menu' id="menu-icon"></i></div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"><img src="src/img/LOGO ESFA OK.png" alt="logo ESFAP MUA" style="max-width: 100px;"></div>
+
+                </div>
+                <ul>
+                    <li><a class="menu-item" href="index.html">Inicio</a></li>
+                    <li class="dropdown">
+                        <a class="menu-item" href="#">Nosotros</a>
+                        <ul class="sub-menu">
+                            <li><a href="nosotros.html"><span>Sobre Nosotros</span></a></li>
+                            <li><a href="personal-docente.html"><span>Personal Docente</span></a></li>
+                            <li><a href="documentos.html"><span>Documentos de Gestión</span></a></li>
+                        </ul>
+
+                    </li>
+                    <li class="dropdown">
+                        <a class="menu-item" href="#">Carreras</a>
+                        <ul class="sub-menu">
+                            <li><a href="artes-visuales.html"><span>Docencia en Artes Visuales</span></a></li>
+                            <li><a href="musica.html"><span>Docencia en Música</span></a></li>
+                            <li><a href="pintura.html"><span>Artista Profesional en Pintura</span></a></li>
+                            <li><a href="escultura.html"><span>Artista Profesional en Escultura</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a class="menu-item" href="noticias.html">Noticias</a></li>
+                    <li class="dropdown">
+                        <a class="menu-item" href="#">Mas</a>
+                        <ul class="sub-menu">
+                            <li><a href="contacto.html"><span>Contacto</span></a></li>
+                            <li><a href="404.html"><span>SIA</span></a></li>
+                            <li><a href="biblioteca-virtual.html"><span>Biblioteca Virtual</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="src/img/biblioteca.jpg" alt="">
+        <h1 class="hero-title">Biblioteca Virtual</h1>
+    </section>
+
+    <main>
+        <div class="biblioteca">
+            <br><br>
+            <h2 class="title">Tu fuente de inspiración</h2>
+            <div class="container-categorias">
+                <ul class="categorias">
+                    <li class="list active" data-filter="all">Todos</li>
+                    <li class="list" data-filter="arte">Arte</li>
+                    <li class="list" data-filter="escultura">Escultura</li>
+                    <li class="list" data-filter="musica">Musica</li>
+                </ul>
+                <ul class="categorias">
+                    <li class="list" data-filter="cajamarca">Tesoro Literario Cajamarca</li>
+                </ul>
+            </div>
+            <div class="libros">
+                <div class="libros">
+                    <?php include 'src/php/libros.php'; ?>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <div class="footer-nav">
+            <div class="footer-brand">
+                <a href="index.html"><img class="footer-img" src="src/img/LOGO ESFA OK.png" alt=""></a>
+            </div>
+            <ul class="footer-list" id="footer-1">
+                <h3 class="footer-title">Navegacion</h3>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="nosotros.html">Nosotros</a>
+                </li>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="personal-docente.html">Personal docente</a>
+                </li>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="biblioteca-virtual.html">Biblioteca virtual</a>
+                </li>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="noticias.html">Noticias</a>
+                </li>
+            </ul>
+            <ul class="footer-list" id="footer-2">
+                <h3 class="footer-title">Carreras y Programas</h3>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="artes-visuales.html">Docencia en Artes Visuales</a>
+                </li>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="musica.html">Docencia en Música</a>
+                </li>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="pintura.html">Artista Profesional en Pintura</a>
+                </li>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="escultura.html">Artista Profesional en Escultura</a>
+                </li>
+                <!-- <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="#">Bachillerato y Licenciatura</a>
+                </li> -->
+            </ul>
+            <ul class="footer-list" id="footer-3">
+                <h3 class="footer-title">Contáctanos</h3>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="contacto.html">Contacto</a>
+                </li>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="https://wa.me/51925376727?text=Deseo%20obtener%20información%20sobre%20la%20ESFAP%20Mario%20Urteaga%20Alvarado" target="_blank">
+                        +51 926 952 941
+                    </a>
+                </li>
+                <li class="footer-link">
+                    <i class='bx bx-chevrons-right'></i>
+                    <a href="mailto:esfapmuac@gmail.com?subject=Información%20sobre%20la%20ESFAP MUA&body=Deseo%20obtener%20información%20sobre%20la%20ESFAP%20Mario%20Urteaga%20Alvarado" target="_blank">esfapmuac@gmail.com</a>
+                </li>
+                <li class="footer-link"><a href="#"></a></li>
+            </ul>
+        </div>
+
+        <p class="footer-copy">Todos los derechos reservados &copy; ESFAP Mario Urteaga Alvarado</p>
+    </footer>
+
+    <script src="src/js/scripts.js"></script>
+    <script src="src/js/biblioteca.js"></script>
+</body>
+
+</html>

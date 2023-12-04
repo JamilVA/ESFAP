@@ -12,10 +12,9 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
 
- 
+    <link rel="stylesheet" href="./build/css/sidebars.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Font Awesome (para iconos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -36,9 +35,6 @@
         }
     </style>
 
-
-    <!-- Custom styles for this template -->
-    <link href="/src/css/sidebars.css" rel="stylesheet">
 </head>
 
 <body>
@@ -51,28 +47,27 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="index-gestion.html" class="nav-link text-white" aria-current="page">
+                    <a href="index.php" class="nav-link text-white" aria-current="page">
                         <i class="fas fa-home"></i>
-                        Home
+                        Inicio
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="gestion-libros.html" class="nav-link active" aria-current="page">
+                    <a href="gestion-libros.php" class="nav-link active" aria-current="page">
                         <i class="fas fa-book"></i>
-                        Biblioteca Virtual
+                        Gestión Biblioteca
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="gestion-noticias.html" class="nav-link text-white" aria-current="page">
+                    <a href="gestion-noticias.php" class="nav-link text-white" aria-current="page">
                         <i class="far fa-newspaper"></i>
-                        Noticias
+                        Gestión Noticias
                     </a>
                 </li>
             </ul>
             <hr>
             <div class="dropdown">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="/src/img/usuario.png" alt="" width="32" height="32" class="rounded-circle me-2">
                     <strong>Jamil Vasquez</strong>
                 </a>
@@ -115,35 +110,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Aquí deberías incluir dinámicamente las filas con los datos de tus libros -->
-                            <tr>
-                                <td>1</td>
-                                <td>Libro 1</td>
-                                <td>Autor 1, Autor 2</td>
-                                <td>2022-01-01</td>
-                                <td>
-                                    <!-- Botones para CRUD (editar, eliminar, etc.) -->
-                                    <a href="#" class="btn btn-warning btn-sm">
-                                        <i class="fas fa-edit"></i> Editar
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-sm">
-                                        <i class="fas fa-trash"></i> Eliminar
-                                    </a>
-                                </td>
-                            </tr>
+                            <?php include 'mostrarlibros.php';?>
                         </tbody>
                     </table>
                 </div>
             </div>
+
         </div>
 
     </main>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
 
-    <script src="/src/js/sidebars.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="./build/js/sidebars.js"></script>
 </body>
 
 </html>

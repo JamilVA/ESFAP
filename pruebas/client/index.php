@@ -7,12 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Inicio Gestión</title>
+    <title>Sistema de gestión WEB</title>
+
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/pruebas/sidebars.css">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Font Awesome (para iconos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -33,14 +36,11 @@
         }
     </style>
 
-
-    <!-- Custom styles for this template -->
-    <link href="/src/css/sidebars.css" rel="stylesheet">
 </head>
 
 <body>
-    <main>
-        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+    <section class="sidebar">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 100vh;">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <i class="fas fa-external-link-alt"></i>
                 <span class="fs-4">Página Web</span>
@@ -48,28 +48,27 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="index-gestion.html" class="nav-link active" aria-current="page">
+                    <a href="index.php" class="nav-link active" aria-current="page">
                         <i class="fas fa-home"></i>
-                        Home
+                        Inicio
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="gestion-libros.html" class="nav-link text-white" aria-current="page">
+                    <a href="gestion-libros.php" class="nav-link text-white" aria-current="page">
                         <i class="fas fa-book"></i>
-                        Biblioteca Virtual
+                        Gestión Biblioteca
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="gestion-noticias.html" class="nav-link text-white" aria-current="page">
+                    <a href="gestion-noticias.php" class="nav-link text-white" aria-current="page">
                         <i class="far fa-newspaper"></i>
-                        Noticias
+                        Gestión Noticias
                     </a>
                 </li>
             </ul>
             <hr>
             <div class="dropdown">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="/src/img/usuario.png" alt="" width="32" height="32" class="rounded-circle me-2">
                     <strong>Jamil Vasquez</strong>
                 </a>
@@ -84,16 +83,47 @@
                 </ul>
             </div>
         </div>
+    </section>
 
-        <div class="b-example-divider"></div>
+    <main>
+        <div class="container-fluid">
+
+            <!-- Botón para agregar un nuevo libro -->
+            <div class="row mt-3">
+                <div class="col">
+                    <a href="#" class="btn btn-success">
+                        <i class="fas fa-plus"></i> Agregar Libro
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tabla para mostrar la información de los libros -->
+            <div class="row mt-3">
+                <div class="col">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Título</th>
+                                <th>Autores</th>
+                                <th>Fecha de Publicación</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php include 'mostrarlibros.php';?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
 
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <script src="/src/js/sidebars.js"></script>
+    <script src="./build/js/sidebars.js"></script>
 </body>
 
 </html>

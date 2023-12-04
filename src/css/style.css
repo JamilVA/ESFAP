@@ -466,7 +466,7 @@ main {
 	align-items: flex-start;
 	justify-content: center;
 	flex-wrap: wrap;
-	gap: 50px 100px;
+	gap: 50px 50px;
 	padding: 20px 0px;
 }
 
@@ -528,7 +528,9 @@ main {
 }
 
 .footer .footer-brand {
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .footer .footer-copy {

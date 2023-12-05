@@ -110,7 +110,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php include 'mostrarlibros.php';?>
+                            <?php include '../server/controllers/mostrar-libros.php';?>
                         </tbody>
                     </table>
                 </div>

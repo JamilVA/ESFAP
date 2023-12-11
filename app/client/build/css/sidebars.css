@@ -2,6 +2,8 @@ body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
   display: flex;
+  overflow: hidden;
+
 }
 
 html {
@@ -15,8 +17,8 @@ main {
   height: 100vh;
   height: -webkit-fill-available;
   max-height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
+  flex: 1;
+  overflow: auto;
 }
 
 .sidebar {

@@ -2,11 +2,12 @@
 include 'conex.php'; // Incluye el archivo de conexión
 
 // Realiza la consulta para obtener los libros
-$query = "SELECT * FROM libros";
+$query = "SELECT * FROM libro";
 $result = $conn->query($query);
 
 // Verifica si hay resultados
 if ($result->num_rows > 0) {
+
     // Itera sobre los resultados y muestra los libros
     while ($row = $result->fetch_assoc()) {
         echo '<div class="libro" data-item="' . $row['categoria'] . '">';
@@ -22,7 +23,7 @@ if ($result->num_rows > 0) {
         echo '</div>';
     }
 } else {
-    echo 'No hay libros disponibles.';
+    echo '<br/>No hay libros disponibles.';
 }
 
 // Cierra la conexión

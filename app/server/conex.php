@@ -6,6 +6,8 @@ $password = "ESF@Pmu@#2020";
 $dbname = "esfapmua_web";
 
 // Crear conexión
+global $conn;
+
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
 // Verificar conexión

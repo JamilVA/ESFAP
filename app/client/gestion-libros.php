@@ -148,8 +148,10 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <?php include '../server/controllers/mostrar-libros.php'; ?>
+                        <tbody id="tablaLibros">
+                            <?php include '../server/controllers/mostrar-libros.php'; 
+                            obtenerLibros()
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -194,7 +196,9 @@
                             timer: 1500
                         });
 
-                        cargarListaLibros();
+                        
+
+                        obtenerLibros();
                     },
                     error: function (xhr, status, error) {
                         console.error("Error en la solicitud AJAX", xhr.responseText); // Agrega esta línea para verificar si hay errores
@@ -207,27 +211,8 @@
                     }
                 });
             });
-            function cargarListaLibros() {
-                $.ajax({
-                    url: '../server/controllers/mostrar-libros.php',
-                    type: 'get',
-                    success: function (response) {
-                        // Actualizar el contenido de la tabla con la nueva lista de libros
-                        $('tbody').html(response);
-                    },
-                    error: function (xhr, status, error) {
-                        console.error("Error al cargar la lista de libros", xhr.responseText);
-                    }
-                });
-            }
         });
-
-
     </script>
-
-
-
-
 </body>
 
 </html>

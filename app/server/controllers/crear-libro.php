@@ -1,16 +1,21 @@
 <?php
+
 include '../../server/conex.php';
 
 // Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Recuperar valores del formulario
-    $titulo = strtoupper($_POST["titulo"]);
-    $autores = strtoupper($_POST["autores"]);
-    $categoriaId = $_POST["categoria_id"];
+    $titulo = isset($_POST["titulo"]) ? mb_strtoupper($_POST["titulo"], 'UTF-8') : '';
+    $autores = isset($_POST["autores"]) ? mb_strtoupper($_POST["autores"], 'UTF-8') : '';
+
+    $categoriaId = isset($_POST["categoria_id"]) ? $_POST["categoria_id"] : '';
 
     if ($conn) {
         // Insertar en la base de datos
         $sql = "INSERT INTO libro (titulo, autores, categoria_id) VALUES ('$titulo', '$autores', '$categoriaId')";
+
+        error_log($sql);
 
         if ($conn->query($sql) === TRUE) {
             // Obtener el ID del libro recién insertado
@@ -48,15 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 echo "Error: No se han enviado los archivos correctamente.";
             }
-
-
         } else {
             echo "Error al crear el libro: " . $conn->error;
         }
     } else {
         echo "Error al conectar a la base de datos." . mysqli_connect_error() . "Hola";
     }
-
 
 }
 

@@ -149,14 +149,16 @@
                             </tr>
                         </thead>
                         <tbody id="tablaLibros">
-                            <?php include '../server/controllers/mostrar-libros.php'; 
-                            obtenerLibros()
+                            <?php
+
+                            include '../server/controllers/mostrar-libros.php';
+                            echo '<tbody id="tablaLibros">' . obtenerLibros() . '</tbody>';
+
                             ?>
                         </tbody>
                     </table>
                 </div>
             </div>
-
         </div>
 
     </main>
@@ -174,21 +176,26 @@
     <script>
         $(document).ready(function () {
             $('#crearLibroForm').submit(function (e) {
-                e.preventDefault(); // Evita el envío del formulario por defecto
+                e.preventDefault();
 
                 console.log("Formulario enviado"); // Agrega esta línea para verificar si la función se está ejecutando
 
-                // Realiza la solicitud AJAX (solo para probar)
+                // Obtén los datos del formulario como FormData
+                var formData = new FormData($('#crearLibroForm')[0]);
+
+                // Itera sobre los datos utilizando entries()
+                for (var pair of formData.entries()) {
+                    console.log(pair[0] + ', ' + pair[1]);
+                }
+
                 $.ajax({
                     url: '../server/controllers/crear-libro.php',
                     type: 'post',
-                    data: new FormData($('#crearLibroForm')[0]),
+                    data: formData,
                     contentType: false,
                     cache: false,
                     processData: false,
                     success: function (response) {
-                        console.log("Éxito en la solicitud AJAX"); // Agrega esta línea para verificar si la solicitud es exitosa
-
                         Swal.fire({
                             title: 'Libro creado con éxito',
                             icon: 'success',
@@ -196,12 +203,12 @@
                             timer: 1500
                         });
 
-                        
-
-                        obtenerLibros();
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1550);
                     },
                     error: function (xhr, status, error) {
-                        console.error("Error en la solicitud AJAX", xhr.responseText); // Agrega esta línea para verificar si hay errores
+                        console.error("Error en la solicitud AJAX", xhr.responseText);
 
                         Swal.fire({
                             title: 'Error al crear el libro',

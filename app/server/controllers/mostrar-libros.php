@@ -8,23 +8,30 @@ function obtenerLibros()
     $sql = "SELECT * FROM libro";
     $result = $conn->query($sql);
 
+    // Inicializar una variable para almacenar el contenido
+    $contenido = '';
+
     // Comprobar si hay resultados
     if ($result->num_rows > 0) {
-        // Mostrar los libros en formato HTML
+        // Construir el contenido en formato HTML
         while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row['id'] . "</td>";
-            echo "<td>" . $row['titulo'] . "</td>";
-            echo "<td>" . $row['autores'] . "</td>";
-            echo "<td>";
-            echo "<a href='#' class='btn btn-warning btn-sm' style='margin-right: 10px;' onclick='editarLibro(" . $row['id'] . ")'>";
-            echo "<i class='fas fa-edit'></i> Editar</a>";
-            echo "<a href='#' class='btn btn-danger btn-sm ' onclick='eliminarLibro(" . $row['id'] . ")'>";
-            echo "<i class='fas fa-trash'></i> Eliminar</a>";
-            echo "</td>";
-            echo "</tr>";
+            $contenido .= "<tr>";
+            $contenido .= "<td>" . $row['id'] . "</td>";
+            $contenido .= "<td>" . $row['titulo'] . "</td>";
+            $contenido .= "<td>" . $row['autores'] . "</td>";
+            $contenido .= "<td>";
+            $contenido .= "<a href='#' class='btn btn-warning btn-sm' style='margin-right: 10px;' onclick='editarLibro(" . $row['id'] . ")'>";
+            $contenido .= "<i class='fas fa-edit'></i> Editar</a>";
+            $contenido .= "<a href='#' class='btn btn-danger btn-sm ' onclick='eliminarLibro(" . $row['id'] . ")'>";
+            $contenido .= "<i class='fas fa-trash'></i> Eliminar</a>";
+            $contenido .= "</td>";
+            $contenido .= "</tr>";
         }
     } else {
-        echo "<tr><td colspan='5'>No hay libros disponibles.</td></tr>";
+        $contenido .= "<tr><td colspan='5'>No hay libros disponibles.</td></tr>";
     }
+
+    // Devolver el contenido
+    return $contenido;
 }
+?>

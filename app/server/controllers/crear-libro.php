@@ -1,5 +1,8 @@
 <?php
 
+ini_set('post_max_size', '100M');
+ini_set('upload_max_filesize', '100M');
+
 include '../../server/conex.php';
 
 // Verificar si se ha enviado el formulario

@@ -10,15 +10,18 @@ if ($result->num_rows > 0) {
 
     // Itera sobre los resultados y muestra los libros
     while ($row = $result->fetch_assoc()) {
-        echo '<div class="libro" data-item="' . $row['categoria'] . '">';
+        echo '<div class="libro" data-item="' . $row['categoria_id'] . '">';
+
         echo '<img src="' . $row['url_portada'] . '" alt="Portada Libro">';
+
         echo '<div class="content">';
+
         echo '<h4>' . $row['titulo'] . '</h4>';
-        echo '<button class="button" type="button">';
-        echo '<span class="button__text">Descargar</span>';
-        echo '<span class="button__icon"><i class="bx bx-download"></i></span>';
-        echo '</button>';
-        echo '<a href="#" class="button-d"></a>';
+
+        echo '<a href="'. $row['url_archivo'] .'" download="'. $row['titulo'] . ' - ' . $row['autores'] .'">';
+        echo '<button class="button">Descargar <i class="bx bx-download"></i></button>';
+        echo '';
+
         echo '</div>';
         echo '</div>';
     }

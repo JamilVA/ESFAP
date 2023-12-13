@@ -1,3 +1,8 @@
+<?php
+ini_set('post_max_size', '100M');
+ini_set('upload_max_filesize', '100M');
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -21,22 +26,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
 
 </head>
 
@@ -69,7 +58,7 @@
                 </li>
             </ul>
             <hr>
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                     id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="/src/img/usuario.png" alt="" width="32" height="32" class="rounded-circle me-2">
@@ -84,7 +73,7 @@
                     </li>
                     <li><a class="dropdown-item" href="#">Sign out</a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -135,7 +124,6 @@
                     Libro</button>
             </form>
 
-            <!-- Tabla para mostrar la información de los libros -->
             <div class="row mt-3">
                 <div class="col">
                     <h2 class="mb-4">Lista de Libros</h2>
@@ -178,15 +166,34 @@
             $('#crearLibroForm').submit(function (e) {
                 e.preventDefault();
 
-                console.log("Formulario enviado"); // Agrega esta línea para verificar si la función se está ejecutando
+                // Obtener el tamaño del archivo
+                var fileSize = $('#archivo')[0].files[0].size; // En bytes
 
-                // Obtén los datos del formulario como FormData
+                // Convertir el tamaño a megabytes
+                var fileSizeMB = fileSize / (1024 * 1024);
+
+                // Verificar si el tamaño excede el límite (20 MB)
+                if (fileSizeMB > 20) {
+                    // Mostrar una alerta con SweetAlert
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Advertencia',
+                        text: 'El tamaño del archivo no puede ser mayor a 20 MB.'
+                    });
+                    return; // Detener el envío del formulario
+                }
+
                 var formData = new FormData($('#crearLibroForm')[0]);
 
-                // Itera sobre los datos utilizando entries()
-                for (var pair of formData.entries()) {
-                    console.log(pair[0] + ', ' + pair[1]);
-                }
+                Swal.fire({
+                    title: 'Guardando Libro',
+                    icon: 'info',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    },
+                });
 
                 $.ajax({
                     url: '../server/controllers/crear-libro.php',
@@ -196,6 +203,8 @@
                     cache: false,
                     processData: false,
                     success: function (response) {
+                        Swal.close();
+
                         Swal.fire({
                             title: 'Libro creado con éxito',
                             icon: 'success',
@@ -209,6 +218,8 @@
                     },
                     error: function (xhr, status, error) {
                         console.error("Error en la solicitud AJAX", xhr.responseText);
+
+                        Swal.close();
 
                         Swal.fire({
                             title: 'Error al crear el libro',

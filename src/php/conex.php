@@ -8,14 +8,11 @@ $dbname = "esfapmua_web";
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
+$conn->set_charset("utf8");
+
 // Verificar conexión
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 
-// Si llegas aquí, la conexión fue exitosa
-echo "Conexión exitosa";
-
-// Cerrar conexión
-// $conn->close();
 ?>

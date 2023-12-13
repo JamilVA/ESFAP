@@ -69,16 +69,16 @@
     <main>
         <div class="biblioteca">
             <br><br>
-            <h2 class="title">Tu fuente de inspiración</h2>
+            <h2 class="title">Tu fuente de inspiración</h2><br>
             <div class="container-categorias">
                 <ul class="categorias">
                     <li class="list active" data-filter="all">Todos</li>
-                    <li class="list" data-filter="arte">Arte</li>
-                    <li class="list" data-filter="escultura">Escultura</li>
-                    <li class="list" data-filter="musica">Musica</li>
+                    <li class="list" data-filter="1">Arte</li>
+                    <li class="list" data-filter="2">Escultura</li>
+                    <li class="list" data-filter="3">Musica</li>
                 </ul>
                 <ul class="categorias">
-                    <li class="list" data-filter="cajamarca">Tesoro Literario Cajamarca</li>
+                    <li class="list" data-filter="4">Tesoro Literario Cajamarca</li>
                 </ul>
             </div>
             <div class="libros">

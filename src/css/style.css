@@ -1335,7 +1335,6 @@ main {
 }
 
 .biblioteca .container-categorias {
-	width: 60%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1990,6 +1989,23 @@ form .input-group.not-empty label {
 		width: 100%;
 		max-width: 83vw;
 		padding: 0 15px;
+	}
+
+	.biblioteca .container-categorias {
+		width: 100%;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.biblioteca .categorias {
+		max-width: 80%;
+		margin-top: 0px;
+	}
+	
+	.biblioteca .categorias .list {
+	
+		padding: 10px;
+		font-weight: 500;
 	}
 
 }

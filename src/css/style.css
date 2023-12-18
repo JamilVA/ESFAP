@@ -191,13 +191,14 @@ hr {
 	justify-content: center;
 	flex-direction: column;
 	background: #2696E9;
+	overflow: hidden;
 }
 
 .home::before {
 	z-index: 777;
 	content: '';
 	position: absolute;
-	background: rgba(3, 96, 251, 0.3);
+
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -246,6 +247,7 @@ hr {
 	height: 100%;
 	object-fit: cover;
 	clip-path: circle(0% at 0 50%);
+	transform: scale(1.08);
 }
 
 .home .video-slider.active {

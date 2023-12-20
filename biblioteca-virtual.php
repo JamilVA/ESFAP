@@ -52,7 +52,7 @@
                         <ul class="sub-menu">
                             <li><a href="contacto.html"><span>Contacto</span></a></li>
                             <li><a href="404.html"><span>SIA</span></a></li>
-                            <li><a href="biblioteca-virtual.html"><span>Biblioteca Virtual</span></a></li>
+                            <li><a href="biblioteca-virtual.php"><span>Biblioteca Virtual</span></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -62,7 +62,7 @@
     </header>
 
     <section class="hero">
-        <img src="src/img/biblioteca.jpg" alt="">
+        <img src="src/img/biblioteca-hero.webp" alt="">
         <h1 class="hero-title">Biblioteca Virtual</h1>
     </section>
 
@@ -117,7 +117,7 @@
                 </li>
                 <li class="footer-link">
                     <i class='bx bx-chevrons-right'></i>
-                    <a href="biblioteca-virtual.html">Biblioteca virtual</a>
+                    <a href="biblioteca-virtual.php">Biblioteca virtual</a>
                 </li>
                 <li class="footer-link">
                     <i class='bx bx-chevrons-right'></i>

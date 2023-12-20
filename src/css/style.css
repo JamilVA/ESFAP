@@ -387,22 +387,22 @@ main {
 }
 
 .card-carrera .card-image.pintura {
-	background: url("../img/carrera1.jpg") no-repeat center;
+	background: url("../img/Pintura1.webp") no-repeat center;
 	background-size: cover;
 }
 
 .card-carrera .card-image.escultura {
-	background: url("../img/carrera3.jpg") no-repeat center;
+	background: url("../img/Escultura1.webp") no-repeat center;
 	background-size: cover;
 }
 
 .card-carrera .card-image.musica {
-	background: url("../img/carrera2.jpg") no-repeat center;
+	background: url("../img/Musica1.webp") no-repeat center;
 	background-size: cover;
 }
 
 .card-carrera .card-image.artes {
-	background: url("../img/carrera4.jpg") no-repeat center;
+	background: url("../img/Artes-visuales1.webp") no-repeat center;
 	background-size: cover;
 }
 
@@ -425,6 +425,7 @@ main {
 }
 
 .card-carrera .card-text p {
+	text-align: center;
 	color: black;
 	font-size: 14px;
 }
@@ -741,7 +742,7 @@ main {
 	position: absolute;
 	bottom: 0;
 	left: 50%;
-	transform: translate(-50%, 20%);
+	transform: translate(-50%, -75%);
 	font-size: 4rem;
 	font-weight: 800;
 	text-transform: uppercase;
@@ -749,8 +750,7 @@ main {
 	line-height: 1.25;
 	margin: auto;
 	color: var(--blanco);
-	height: 200px;
-	width: 80%;
+	width: 90%;
 }
 
 .hero-title span {

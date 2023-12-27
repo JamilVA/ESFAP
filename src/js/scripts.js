@@ -35,36 +35,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* VIDEO SLIDER */
 
-const btns = document.querySelectorAll(".nav-btn")
-const videos = document.querySelectorAll(".video-slider")
-const contents = document.querySelectorAll(".content-slider")
+const btns = document.querySelectorAll(".nav-btn");
+const videos = document.querySelectorAll(".video-slider");
+const contents = document.querySelectorAll(".content-slider");
+
+let currentSlider = 0;
 
 var sliderNav = function (manual) {
     btns.forEach((btn) => {
         btn.classList.remove("active");
-    })
+    });
 
     videos.forEach((video) => {
         video.classList.remove("active");
         video.pause();
         video.currentTime = 0;
-    })
+    });
 
     contents.forEach((content) => {
         content.classList.remove("active");
-    })
+    });
 
     btns[manual].classList.toggle("active");
     videos[manual].classList.toggle("active");
     contents[manual].classList.toggle("active");
     videos[manual].play();
-}
+
+    currentSlider = manual;
+};
 
 btns.forEach((btn, i) => {
     btn.addEventListener("click", () => {
         sliderNav(i);
-    })
-})
+    });
+});
+
+// Cambio automático cada 15 segundos
+setInterval(() => {
+    const nextSlider = (currentSlider + 1) % btns.length;
+    sliderNav(nextSlider);
+}, 12500);
 
 /* PAUSAR SI NO ESTAN EN VISTA */
 

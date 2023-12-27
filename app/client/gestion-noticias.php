@@ -90,10 +90,10 @@
     <main>
         <div class="container-fluid">
 
-            <h1 class="m-4 text-center">Gestión Biblioteca Virtual</h1>
+            <h1 class="m-4 text-center">Gestión Noticias</h1>
 
-            <form id="crearLibroForm" method="post" class="mt-4" enctype="multipart/form-data">
-                <h3 class="mb-4">Agregar Nuevo Libro</h3>
+            <form id="crearNoticiaForm" method="post" class="mt-4" enctype="multipart/form-data">
+                <h3 class="mb-4">Nueva Noticia</h3>
 
                 <div class="mb-3">
                     <label for="titulo" class="form-label">Título:</label>
@@ -101,55 +101,37 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="autores" class="form-label">Autores:</label>
-                    <input type="text" class="form-control" id="autores" name="autores" required>
+                    <label for="texto" class="form-label">Texto:</label>
+                    <textarea class="form-control" id="texto" name="texto" rows="5" required></textarea>
                 </div>
 
                 <div class="mb-3">
-                    <label for="portada" class="form-label">Portada del Libro:</label>
-                    <input type="file" class="form-control" id="portada" name="portada" accept="image/*" required>
+                    <label for="imagen" class="form-label">Imagen:</label>
+                    <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required>
                 </div>
 
-                <div class="mb-3">
-                    <label for="archivo" class="form-label">Archivo PDF:</label>
-                    <input type="file" class="form-control" id="archivo" name="archivo" accept=".pdf" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="categoria_id" class="form-label">Categoría:</label>
-                    <select class="form-select" id="categoria_id" name="categoria_id" required>
-                        <?php
-                        include '../server/controllers/mostrar-categorias.php';
-
-                        $categorias = obtenerCategorias();
-
-                        foreach ($categorias as $categoria) {
-                            echo "<option value='" . $categoria['id'] . "'>" . $categoria['nombre'] . "</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
                 <button type="submit" id="enviarFormulario" class="btn btn-success"><i class="fas fa-plus"></i> Agregar
-                    Libro</button>
+                    Noticia</button>
             </form>
 
             <div class="row mt-3">
                 <div class="col">
-                    <h2 class="mb-4">Lista de Libros</h2>
+                    <h2 class="mb-4">Lista de Noticias</h2>
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Título</th>
-                                <th>Autores</th>
+                                <th>Texto</th>
+                                <th>Fecha</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody id="tablaLibros">
                             <?php
 
-                            include '../server/controllers/mostrar-libros.php';
-                            echo '<tbody id="tablaLibros">' . obtenerLibros() . '</tbody>';
+                            include '../server/controllers/mostrar-noticias.php';
+                            echo '<tbody id="tablaLibros">' . obtenerNoticias() . '</tbody>';
 
                             ?>
                         </tbody>
@@ -160,11 +142,87 @@
 
     </main>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <script src="./build/js/sidebars.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#crearNoticiaForm').submit(function (e) {
+                e.preventDefault();
+
+                // Obtener el tamaño del archivo
+                var fileSize = $('#imagen')[0].files[0].size; // En bytes
+
+                // Convertir el tamaño a megabytes
+                var fileSizeMB = fileSize / (1024 * 1024);
+
+                // Verificar si el tamaño excede el límite (20 MB)
+                if (fileSizeMB > 20) {
+                    // Mostrar una alerta con SweetAlert
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Advertencia',
+                        text: 'El tamaño del archivo no puede ser mayor a 20 MB.'
+                    });
+                    return; // Detener el envío del formulario
+                }
+
+                var formData = new FormData($('#crearNoticiaForm')[0]);
+
+                Swal.fire({
+                    title: 'Guardando Noticia',
+                    icon: 'info',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    },
+                });
+
+                $.ajax({
+                    url: '../server/controllers/crear-noticia.php',
+                    type: 'post',
+                    data: formData,
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function (response) {
+                        Swal.close();
+
+                        Swal.fire({
+                            title: 'Noticia creada con éxito',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1550);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error en la solicitud AJAX", xhr.responseText);
+
+                        Swal.close();
+
+                        Swal.fire({
+                            title: 'Error al crear la noticia',
+                            icon: 'error',
+                            showConfirmButton: true
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

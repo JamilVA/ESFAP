@@ -769,24 +769,24 @@ main {
 }
 
 .imagen-texto.historia {
-	background: url(../img/nosotros.png) no-repeat left;
+	background: url(../img/nosotros.webp) no-repeat left;
 
 }
 
 .imagen-texto.pintura {
-	background: url(../img/pintura.png) no-repeat left;
+	background: url(../img/pintura2.webp) no-repeat left;
 }
 
 .imagen-texto.escultura {
-	background: url(../img/escultura-1.png) no-repeat left;
+	background: url(../img/escultura2.webp) no-repeat left;
 }
 
 .imagen-texto.musica {
-	background: url(../img/musica.png) no-repeat left;
+	background: url(../img/musica2.webp) no-repeat left;
 }
 
 .imagen-texto.artes-visuales {
-	background: url(../img/artes-visuales.png) no-repeat left;
+	background: url(../img/artes-visuales2.webp) no-repeat left;
 }
 
 
@@ -1391,7 +1391,7 @@ main {
 	left: 0;
 	width: 50%;
 	height: 100%;
-	background: url(../img/nosotros.png) no-repeat left;
+	background: url(../img/nosotros.webp) no-repeat left;
 	background-size: cover;
 }
 
